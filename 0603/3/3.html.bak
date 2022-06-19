@@ -1,0 +1,17 @@
+<!DOCTYPE HTML >
+<html>
+ <head>
+  <title> 四季轮回 </title>
+  <meta charset="">
+ </head>
+
+ <body>
+	<center>
+		<h1>秋天</h1>
+		<hr>
+		<img src="https://img0.baidu.com/it/u=2999457844,779421017&fm=253&fmt=auto&app=138&f=JPEG?w=750&h=500" alt="" />
+		<hr>
+		<a href="4.html">走进冬天</a>
+	</center>
+ </body>
+</html>

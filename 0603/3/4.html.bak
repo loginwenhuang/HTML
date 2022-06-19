@@ -1,0 +1,18 @@
+<!DOCTYPE HTML >
+<html>
+ <head>
+  <title> 四季轮回 </title>
+  <meta charset="">
+ </head>
+
+ <body>
+	<center>
+		<h1>冬天</h1>
+		<hr>
+		<img src="4.jpg" alt="" />
+		<hr>
+		<a href="../test4.html">走进春天</a>
+	</center>
+ </body>
+</html>
+

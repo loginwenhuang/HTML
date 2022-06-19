@@ -1,0 +1,29 @@
+<!DOCTYPE HTML >
+<html>
+ <head>
+  <title> New Document </title>
+  <meta charset="utf-8">
+ </head>
+
+ <body>
+	<img src="" alt="" weight="" hight="" align="">
+	<!--
+		ol: 有序列表
+	-->
+	<ul>
+		<li></li>
+	</ul>
+	<ol>
+		<li></li>
+	</ol>
+	<!--
+		自定义列表
+		dl:自定列表
+		dt:数据标题
+		dd:数据项
+	-->
+	<dl>
+		<dt></dt>
+		<dd></dd>
+ </body>
+</html>
