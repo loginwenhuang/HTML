@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+    </title>
+    <script>
+        //var i = 0;
+        /*window.setTimeout(function(){
+            document.write(i++);
+        },3000);*/
+        /*window.setInterval(function(){
+            document.write(i++);
+        },30);*/
+        function getTime(){
+            var d = new Date();
+            var Y = d.getFullYear();
+            var M = d.getMonth()+1;
+            var D = d.getDate();
+            var H = d.getHours();
+            var Mi = d.getMinutes();
+            var S = d.getSeconds();
+
+            output.innerHTML = Y+"年"+M+"月"+D+"日"+" "+H+"时"+Mi+"分"+S+"秒";
+        }
+        var t;
+        function startTime(){
+            t=setInterval(getTime,1000);
+        }
+        function stopTime(){
+            clearInterval(t);
+        }
+        window.onload=getTime;
+        
+        /*setInterval(function(){
+            window.location.reload();
+        },1000)*/
+    </script>
+</head>
+<body>
+    <div>
+        <button type="button" onclick="startTime()">开始</button>
+        <button type="button" onclick="stopTime()">停止</button>
+        <p id="output">
+
+        </p>
+    </div>
+</body>
+</html>

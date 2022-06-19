@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        my page
+    </title>
+</head>
+<body>
+    <input type="button" id="btnAdd" value="添加"/>
+    <input type="button" id="btnRemove" value="删除">
+    <div id="mydiv">
+
+    </div>
+    <script>
+        function addElement(){
+            var pobj = document.createElement("p");
+            pobj.innerHTML="哈哈哈哈哈哈哈哈哈~"
+            mydiv.appendChild(pobj);
+        }
+        function removeElement(){
+            //var subobj = mydiv.lastELementChild;//自己写的
+            //var subobj = mydiv.lastElementChild;
+            //subobj.remove();
+            //mydiv.removeChild(subobj);//我自己写的
+            mydiv.removeChild(subobj);
+        }
+        //删除元素
+        // function removeElement(){
+        //     //1.获取到要删除的元素
+        //     var subObj = mydiv.lastElementChild;
+        //     //2.删除
+        //     //通过父元素，删除子元素
+        //     mydiv.removeChild(subObj);
+        //     //通过元素自己删除自己
+        //     //subObj.remove();
+        // }
+        btnAdd.onclick=addElement;
+        btnRemove.onclick=removeElement;
+    </script>
+</body>
+</html>

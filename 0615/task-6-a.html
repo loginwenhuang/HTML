@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        使用splice实现有序数组的数据插入
+    </title>
+    <script>
+        var arr = [10,50,70,89,99];
+        var val = Number(prompt("请输入要插入的数据：",""));
+        var pos = -1;
+        for(var i = 0; i<arr.length;i++){
+            if(arr[i]>val){
+                pos = i;
+                break;
+            }
+        }
+        arr.splice(pos,0,val);
+        document.write(arr);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

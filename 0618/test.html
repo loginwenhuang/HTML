@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        电子时钟
+    </title>
+    <script>
+        var t;
+        function clockTime(){
+            var clock = new Date();
+            //alert(clock);
+            var Y = clock.getFullYear();
+            var M = clock.getMonth()+1;
+            var D = clock.getDate();
+            var H = clock.getHours();
+            var Mi = clock.getMinutes();
+            var S = clock.getSeconds();
+
+            output.innerHTML=Y+"年"+M+"月"+D+"日"+H+"时"+Mi+"分"+S+"秒";
+        }
+        window.onload=clockTime;
+        function starTime(){
+            t=setInterval(clockTime,1000);
+        }
+        function stopTime(){
+            clearInterval(t);
+        }
+    </script>
+</head>
+<body>
+    <input type="button" name="" onclick="starTime()" value="开始"/>
+    <input type="button" onclick="stopTime()" value="停止"/>
+    <p id="output"></p>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选择排序</title>
+    <script>
+        var arr = [20,12,33,45,67,11,45,808,12,9,6,5,7,8];
+        document.write("排序前的数组:"+arr);
+        
+        for(var i=0;i<arr.length;i++){
+            var count = i;
+            for(var k=i;k<arr.length;k++){
+                if(arr[k]<arr[count]){
+                    count = k;
+                }
+            }
+            var temp = arr[i];
+            arr[i] = arr[count];
+            arr[count] = temp;
+        }
+        document.write("<br />排序后的数组:"+arr);
+        document.write("<br />")
+    </script>
+</head>
+<body>
+    <img src="../img/2.jpg" alt="目小温">
+</body>
+</html>

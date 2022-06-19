@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+    </title>
+    <script>
+        function changeWebsite(){
+            var selWebSite = document.getElementById("select");
+            if(selWebSite.value==""){
+                //return ;
+                //刷新当前界面
+                document.location.reload();
+
+            }
+            //document.location.href=selWebSite.value;
+            //没有历史记录
+            //document.location.replace(selWebSite.value);
+        }
+    </script>
+</head>
+<body>
+    <select name="" id="select" onchange="changeWebsite()">
+        <option value="">请选择</option>
+        <option value="https://www.bilibili.com">B站</option>
+        <option value="https://www.baidu.com">百度</option>
+        <option value="https://www.jd.com">京东</option>
+    </select>
+</body>
+</html>

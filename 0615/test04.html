@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冒泡排序</title>
+    <script>
+        var arr = [20,12,33,45,67,11,45,808,12,9,6,5,7,8];
+        document.write("排序前的数组:"+arr);
+        document.write("<br />");
+        for(var i=0;i<arr.length-1;i++){
+            for(var k = 0;k<arr.length-1-i;k++){
+                if(arr[k]>arr[k+1]){
+                    var num = arr[k];
+                    arr[k] = arr[k+1];
+                    arr[k+1]= num;
+                    document.write(arr+"<br />")
+                }
+            }
+        }
+        
+        document.write("排序后的数组:"+arr);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

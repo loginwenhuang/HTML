@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script>
+        //var arr =[];
+        var arr = new Array(5);
+        var flag = true;
+        for(var i=0;i<arr.length;i++){
+            var num =Number(prompt("请输入第"+(i+1)+"个同学的成绩:",""));
+            if(num<=100&&num>=0){
+                arr[i]=num;
+            }else{
+                alert("输入有误\n请检查成绩是否在1--100以内");
+                flag =false;
+                break;
+            }
+        }
+        if(flag){
+            /*for(var i=0;i<5;i++){
+                document.write("第"+(i+1)+"同学的成绩是:"+arr[i]+"分<br />");
+            }*/
+            for(var i in arr){
+                document.write("第"+(Number(i)+1)+"同学的成绩是:"+arr[i]+"分<br />");
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

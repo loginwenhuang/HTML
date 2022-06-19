@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+
+    </title>
+    <script>
+        /*function accuMulation(n,m){
+            var num = 0;
+            while(n<=m){
+                num+=n;
+                n++;
+            }
+            return num;
+        }
+        var add = accuMulation(0,10);
+        alert(add);*/
+        function getName(){
+            var arr = [
+			'凡石磊',
+			'艾建康',
+			'李昊泽',
+			'庞腾飞',
+			'张金龙',
+			'贾明国',
+			'柴栋',
+			'汪博玙',
+			'解建敏',
+			'王文彪',
+			'胡霄旭',
+			'孟祥哲',
+			'刘闯',
+			'孙明龙',
+			'王憬',
+			'王浩成',
+			'王浩宁',
+			'殷海涛'
+		]
+        var n = Number(prompt("输入点名人数,小于"+arr.length,""));
+        var num=0;
+        while(true){
+            var pos = parseInt(Math.random()*arr.length);
+            if(arr[pos]!='false'){
+                //return arr[pos];
+                document.write(arr[pos]+"<br />");
+                arr[pos]="false";
+                num++;
+            }
+            if(num==n){
+                break;
+            }
+        }
+        }
+        getName();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

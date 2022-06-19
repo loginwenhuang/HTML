@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>输入地区、文理科以及高考分数，看你是否能上清华</title>
+    <script>
+        var city = prompt("输入地区:","");
+        var subject = prompt("文理科:","");
+        var score = prompt("学科成绩:","");
+        switch(city){
+            case "内蒙古" :
+                if(subject=="理科"&&score>=673){
+                    document.write("能上清华");
+                }else if(subject=="文科"&&score>=653){
+                    document.write("能上清华");
+                }else{
+                    document.write("不能上清华！");
+                }
+                break;
+            case "广西" :
+                if(subject=="理科"&&score>=679){
+                    document.write("能上清华");
+                }else if(subject=="文科"&&score>=669){
+                    document.write("能上清华");
+                }else{
+                    document.write("不能上清华！");
+                }
+                break;
+            case "河南" :
+                if(subject=="理科"&&score>=699){
+                    document.write("能上清华");
+                }else if(subject=="文科"&&score>=677){
+                    document.write("能上清华");
+                }else{
+                    document.write("不能上清华！");
+                }
+                break;
+            default:
+                document.write("没有这个地区");
+                break;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

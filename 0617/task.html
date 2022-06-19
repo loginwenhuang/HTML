@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+    </title>
+    <style>
+        fieldset{
+            width: 400px;
+            margin: 50px auto;
+            border: 1px solid blue;
+        }
+    </style>
+    <script>
+        function numCalc(calc){
+            var num = document.getElementsByName("num");
+            var res;
+            switch(calc){
+                case "+":
+                    res = Number(num[0].value)+Number(num[1].value);
+                    break;
+                case "-":
+                    res = Number(num[0].value)-Number(num[1].value);
+                    break;
+                case "*":
+                    res = Number(num[0].value)*Number(num[1].value);
+                    break;
+                case "/":
+                    res = Number(num[0].value)/Number(num[1].value);
+                    break;
+            }
+            num[2].value=res;
+        }
+    </script>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>计算器</legend>
+            <p>
+                数字一：
+                <input type="text" name="num" id="" placeholder="请输入一个数字"/>
+            </p>
+            <p>
+                数字二：
+                <input type="text" name="num" placeholder="请输入一个数字">
+            </p>
+            <p>
+                计算方式:
+                <input type="button" value="+" onclick="numCalc(this.value)">
+                <input type="button" value="-" onclick="numCalc(this.value)">
+                <input type="button" value="*" onclick="numCalc(this.value)">
+                <input type="button" value="/" onclick="numCalc(this.value)">
+            </p>
+            <p>
+                计算结果：
+                <input type="text" name="num">
+            </p>
+        </fieldset>
+    </form>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        在页面上创建三个下拉框 和一个文本框 ，通过下拉框的onchange事件(内容改变事件)将信息拼接显示在文本框中
+    </title>
+    <script>
+        function onChange(){
+            var select = document.getElementsByName("sel");
+            //alert(select[0].value);
+            var sec = select[0].value+select[1].value+select[2].value;
+            //alert(sec);
+            output.innerHTML= sec;
+        }
+    </script>
+</head>
+<body>
+    <form action="">
+        <select name="sel" id="" onchange="onChange()">
+            <option value="河南">河南</option>
+            <option value="河北">河北</option>
+        </select>
+        <select name="sel" id="" onchange="onChange()">
+            <option value="你">你</option>
+            <option value="你们">你们</option>
+        </select>
+        <select name="sel" id="" onchange="onChange()">
+            <option value="好！">好！</option>
+            <option value="好呀！">好呀！</option>
+        </select>
+        <p id="output">
+
+        </p>
+    </form>
+</body>
+</html>

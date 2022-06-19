@@ -1,0 +1,29 @@
+.finally{
+    float: left;
+    width: 518px;
+    background-color: #FFFFFF;
+}
+#last{
+    background-color: #FFFFFF;
+    float: left;
+    width: 518px;
+    list-style: inside;
+    list-style-image: url(img/icon2.gif);
+}
+#last li{
+    width: 229px;
+    height: 13px;
+    float: left;
+    margin-left: 30px;
+    margin-bottom: 5px;
+}
+#last a{
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+    line-height: 13px;
+}
+#last li>a:hover{
+    text-decoration: underline;
+    color: red;
+}

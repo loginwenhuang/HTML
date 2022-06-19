@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        整5个文本框，计算最大 最小 平均以及和，并显示到一个标签中。
+        录入的值必须是数字 点击按钮时判断不能为空必须是数字--附加 
+    </title>
+    <style>
+        #Input{
+            border: 1px dashed red;
+            margin: 0px auto;
+            width: 300px;
+            height: 100px;
+
+        }
+    </style>
+    <script>
+        
+        function numCalc(){
+            var input = document.getElementsByName("num");
+            //alert(typeof (Number(input[0].value))+Number(input[0].value));
+            //alert((typeof Number(input[0].value)));
+            var sum = 0;
+            var max = input[0].value;
+            var min = input[0].value;
+            var flag = true;
+            for(var i = 0;i<input.length;i++){
+                //
+                if(Number(input[i].value)==0&&input[i].value!=""){
+                    continue;
+                }else if(!Number(input[i].value)||input[i].value==""){
+                    alert("必须输入数字！");
+                    flag = false;
+                    break;
+                }
+                sum += Number(input[i].value);
+                if(max<Number(input[i].value)){
+                    max = Number(input[i].value);
+                }
+                if(min>Number(input[i].value)){
+                    min = Number(input[i].value);
+                }
+            }
+            if(flag){
+                var src = "最大值:"+max+"<br / >"+"最小值:"+min+"<br/>"+"平均值:"+(sum/input.length)+"<br />"+"和:"+sum;
+                Input.innerHTML=src;
+                Input.style.color="pink"
+            }
+            
+        }
+        
+    </script>
+</head>
+<body>
+    <form action="">
+        <input type="text" name="num" value=""/>
+        <input type="text" name="num" value="" />
+        <input type="text" name="num" value=""/>
+        <input type="text" name="num" value=""/>
+        <input type="text" name="num" value=""/>
+        <br />
+        <input type="button" value="计算" onclick="numCalc()"></button>
+        <br />
+        <p id="Input">
+            这里是输出框!
+        </p>
+    </form>
+</body>
+</html>

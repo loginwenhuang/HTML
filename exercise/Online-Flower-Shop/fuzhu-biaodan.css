@@ -1,0 +1,58 @@
+body {
+	font: normal 12px "宋体", Helvetica, Verdana, Arial;
+	}
+p { 
+	margin: 10px 0;
+	text-align:right;
+	}
+ul, ol, dl, li, dt, dd {
+	list-style-type:none;
+	margin:0 0 0 1em;
+	padding:0;
+	}
+form{
+	padding:2em;
+	border:solid 1px #E7F8C4;
+	text-align:center;
+    width: 500px;
+	}
+fieldset {
+	text-align:left;
+	}	
+legend {
+	padding: 0;
+	margin:0;
+	color: #000;
+	font-weight:bold;
+	}
+li legend {
+	font-weight:normal;
+	}	
+input, textarea, select {
+	margin: 0;
+	padding: 0;
+}
+.sr {
+	position: absolute;
+	left: -9999em;
+	}
+	
+form.form1{
+	width: 370px;
+	font-size: 1.1em;
+	color: #333;
+	background: url(img/fieldset.gif) left bottom repeat-x;	
+	}
+form.form1 fieldset {
+	border: none;
+	border-top: 1px solid #C9DCA6;
+}
+form.form1 .fld1 li {
+	padding: 4px;
+}
+form.form1 .fld2 li {
+	padding: 2px;
+}		
+li  fieldset label {
+	padding:0 0 0 2em;
+}

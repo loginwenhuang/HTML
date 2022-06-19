@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        定义长度为10的数组，存储10个人的分数。统计大于80分的人数
+    </title>
+    <script>
+        var arr = new Array(10);
+        for(var i =0 ; i<arr.length;i++){
+            arr[i]=Number(prompt("输入分数:",""));
+        }
+        var count =0;
+        for(var i in arr){
+            if(arr[i]>=80){
+                count++;
+            }
+        }
+        document.write("80分以上成绩的人数:"+count);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

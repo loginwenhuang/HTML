@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        匿名函数
+    </title>
+    <style>
+        #t1{
+            border:1px dashed black;
+        }
+    </style>
+    <script>
+        /*var x = function(){
+            alert("你好");
+        }
+        x();
+        
+        window.onload=function(){
+                alert(title.innerHTML);
+            }
+        */ 
+        //对象：复杂属性或行为的集合体
+        function onclick1(){
+            i1.value="双击内容居中"
+            t1.innerHTML="你点击了我";
+            //alert("你点击了我");
+            t1.style.backgroundColor = "pink";
+            t1.style.color = "white";
+            //
+            t1.style.width="400px"
+            t1.style.margin="0px auto";
+        }
+        function ondblclick1(){
+            t1.style.textAlign ="center";
+        }
+        function over(){
+            t1.style.border="5px solid green";
+            t1.style.backgroundColor="red";
+        }
+        function leave(){
+            t1.style.border="5px dashed black";
+            t1.style.backgroundColor = "orange";
+        }
+    </script>
+</head>
+<body>
+    <!--<h1 id = "title">Muxiaowen</h1>-->
+    <input type="button" value="框框居中" id ="i1"
+            onclick="onclick1()" 
+            ondblclick="ondblclick1()">
+    <h1 id="t1" 
+            onmouseover="over()"
+            onmouseleave="leave()"
+    >动我一下试试!</h1>
+
+</body>
+</html>

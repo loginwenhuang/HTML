@@ -1,0 +1,109 @@
+/*flower-shop-online*/
+#right{
+    width: 518px;
+    overflow: hidden;
+}
+#new{
+    width: 519px; 
+}
+#new a{
+    float: left;
+    width: 173px;
+    height: 107px;
+    text-decoration: none;
+    display: block;
+}
+#new img{
+    width: 172px;
+    height: 107px;
+}
+
+.tuijian{
+    width: 518px;
+    overflow: hidden;
+    list-style: none;
+    background-color: #FFFFFF;
+}
+.tuijian li{
+    float: left;
+    width: 125px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+
+    margin-left:3px;
+    margin-top: 10px;
+}
+.tuijian li a{
+    color: #666666;
+    text-decoration: none;
+    font-size: 12px;
+}
+.tuijian li a:hover{
+    color: red;
+    text-decoration: underline;
+    font-size: 12px;
+}
+.tuijian p{
+    font-size: 11px;
+}
+.tuijian img{
+    width:106px;
+    height:106px;
+}
+/*shopping-cart*/
+/*购物车*/
+#table{
+    float: left;
+}
+table tr,th,td{
+    border:1px solid #0C6 ;
+    padding: 0px;
+    background-color: #FFFFFF;
+}
+table{
+    width:515px;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+td{
+    font-size: 12px;
+    height: 52px;
+}
+.td01{
+    background: url(img/9010754_s.jpg) no-repeat;  
+}
+.td02{
+    background: url(img/20117172541784282.jpg) no-repeat;
+}
+.td03{
+    color:red;
+}
+.td01 a,.td02 a{
+    margin-left: 48px;
+}
+.td05 a{
+    margin-left: 11px;
+}
+
+.span1,.span2{
+    height: 16px;
+    width: 515px;
+    display: block;
+    font-size: 12px;
+}
+.span1{
+    text-align: right;
+}
+.span2{
+    text-align: center;
+}
+.span3{
+    width: 515px;
+    display: block;
+    text-align: right;
+}
+.span3 u{
+    font-size: 12px;
+    color:greenyellow;
+}

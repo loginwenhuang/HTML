@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组 数据 删除</title>
+    <script>
+        var arr = [20,12,33,45,67];
+        document.write("数组长度:"+arr.length+"<br />");
+        for(var i in arr ){
+            document.write(arr[i]+" ");
+        }
+        document.write("<br />");
+        var n = Number(prompt("请输入删除数据的位置:",""));
+        document.write("删除的数据位置"+n+"<br />");
+        for(var i=n-1;i<arr.length;i++){
+            if((typeof arr[i+1])=='undefined'){
+                break;
+            }
+            arr[i]=arr[i+1];
+        }
+        arr.length-=1;
+        for(var i in arr){
+            document.write(arr[i]+" ");
+        }
+        document.write("<br />数组长度:"+arr.length);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

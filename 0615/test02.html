@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组 数据 插入</title>
+    <script>
+        var arr = [20,12,33,45,67];
+        for(var i in arr ){
+            document.write(arr[i]+" ");
+        }
+        document.write("<br />");
+        var n = Number(prompt("请输入插入数据的位置",""));
+        var num = prompt("请输入插入的位置","");
+        for(var i=arr.length;i>=n;i--){
+            arr[i] = arr[i-1];
+        }
+        arr[n-1] = num;
+        for(var i in arr){
+            document.write(arr[i]+" ");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

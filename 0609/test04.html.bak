@@ -1,0 +1,33 @@
+<!DOCTYPE HTML >
+<html>
+ <head>
+  <title>  </title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="">
+  <style type="text/css">
+	.d1{
+		width:100px;
+		height:100px;
+		background-color:gray;
+		border:5px solid black;
+		
+		box-sizing:border-box;
+		padding:10px;
+	}
+	.d2{
+		width:100px;
+		height:100px;
+		background-color:green;
+		border:5px solid black;
+
+		box-sizing:content-box;
+		padding:10px;
+	}
+  </style>
+ </head>
+
+ <body>
+	<div class="d1">这有一些内容</div>
+	<div class="d2">这有一些内容</div>
+ </body>
+</html>

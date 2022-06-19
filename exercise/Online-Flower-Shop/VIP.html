@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会员中心</title>
+    <link rel="stylesheet" type="text/css" href="import.css" />
+</head>
+<body>
+    <div id="con">
+        <div id="top"><img src="img/banner.jpg" alt=""></div>
+        <div id="seven_a">
+            <a href="#">鲜花礼品</a>
+            <a href="#">自主订花</a>
+            <a href="#">绿色植物</a>
+            <a href="#">花之物语</a>
+            <a href="#">会员中心</a>
+            <a href="#">联系我们</a>
+            <a href="#">支付方式</a>
+        </div>
+        <div id="left">
+            <img src="img/login.jpg" alt="">
+            <div id="user_log">
+                <p>用户:<input type="text"></p>
+                <p>密码:<input type="text"></p>
+                <p>
+                    <button type="button">登录</button>
+                    <button type="button">注册</button>
+                    <a href="#">忘记密码</a>
+                </p>
+            </div>
+            <img src="img/category.jpg" alt="">
+            <div id="flower">
+                <h5>用途</h5>
+                <ul class="list">
+                    <li><a href="#">爱情鲜花</a></li>
+                    <li><a href="#">生日送花</a></li>
+                    <li><a href="#">新年鲜花</a></li>
+                    <li><a href="#">家庭用花</a></li>
+                    <li><a href="#">亲情用花</a></li>
+                    <li><a href="#">道歉鲜花</a></li>
+                    <li><a href="#">开业花篮</a></li>
+                    <li><a href="#">会议用花</a></li>
+                </ul>
+                <h5>花材</h5>
+                <ul class="list">
+                    <li><a href="#">玫瑰花</a></li>
+                    <li><a href="#">百合花</a></li>
+                    <li><a href="#">郁金香</a></li>
+                    <li><a href="#">太阳花</a></li>
+                    <li><a href="#">康乃馨</a></li>
+                    <li><a href="#">马蹄莲</a></li>
+                    <li><a href="#">扶郎</a></li>
+                    <li><a href="#">剑兰</a></li>
+                </ul>
+                <h5>价格</h5>
+                <ul class="list">
+                    <li><a href="#">100~200元</a></li>
+                    <li><a href="#">200~300元</a></li>
+                    <li><a href="#">300~400元</a></li>
+                    <li><a href="#">400~500元</a></li>
+                    <li><a href="#">500~600元</a></li>
+                    <li><a href="#">600~700元</a></li>
+                    <li><a href="#">700~800元</a></li>
+                    <li><a href="#">800元以上</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--表单开始-->
+        <form action="#" class="form1">
+            <p><em>*</em>号所在项为必填项</p>
+            <fieldset class="fld1">
+            <legend>个人信息</legend>
+            <ol>
+                <li>
+                    <label for="name">姓名<em>*</em></label>
+                    <input id="name">
+                </li>
+                <li>
+                    <label for="address">地址<em>*</em></label>
+                    <input id="address">
+                </li>
+                <li>
+                    <label for="dob">出生<span class="sr">日</span><em>*</em></label>
+                    <select id="dob">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                    <label for="dob-m" class="sr">月<em>*</em></label>
+                    <select id="dob-m">
+                        <option value="1">Jan</option>
+                        <option value="2">Feb</option>
+                    </select>
+                    <label for="dob-y" class="sr">年<em>*</em></label>
+                    <select id="dob-y">
+                        <option value="1979">1979</option>
+                        <option value="1980">1980</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="sex">性别<em>*</em></label>
+                    <select id="sex">
+                        <option value="female">女</option>
+                        <option value="male">男</option>
+                    </select>
+                </li>
+            </ol>
+            </fieldset>
+            <fieldset class="fld2">
+            <legend>其他信息</legend>
+            <ol>
+                <li>
+                    <fieldset>
+                    <legend>你喜欢这个表单吗? <em>*</em></legend>
+                    <label><input name="invoice-address" type="radio">喜欢</label>
+                    <label><input name="invoice-address" type="radio">不喜欢</label>
+                    </fieldset>
+                </li>
+                <li>
+                    <fieldset>
+                    <legend>你喜欢什么运动?</legend>
+                    <label for="football"><input id="football" type="checkbox">足球</label>
+                    <label for="golf"><input id="basketball" type="checkbox">篮球</label>
+                    <label for="rugby"><input id="ping" type="checkbox">乒乓球</label>
+                    </fieldset>
+                </li>
+                <li>
+                    <fieldset>
+                    <legend>请写下你的建议? <em>*</em></legend>
+                    <label for="comments"><textarea id="comments" rows="7" cols="25"></textarea></label>
+                    </fieldset>	
+                </li>
+            </ol>
+            </fieldset>
+            <input value="提交个人信息" class="submit" type="submit">
+        </form>
+        <!--表单结束-->
+        <div class="finally">
+            <img src="img/tips.jpg" alt="">
+        </div>
+        <ul id="last">
+            <li><a href="">各种鲜花所代表的含义种</a></li>
+            <li><a href="">花的喜怒哀乐与人的各种感觉</a></li>
+            <li><a href="">养花与养生之道</a></li>
+            <li><a href="">每天清晨的第一缕阳光</a></li>
+            <li><a href="">花香的味道</a></li>
+            <li><a href="">世界各地关于送花的习俗</a></li>
+            <li><a href="">花与送花</a></li>
+            <li><a href="">手捧一束鲜花的等待</a></li>
+        </ul>
+    </div>
+</body>
+</html>

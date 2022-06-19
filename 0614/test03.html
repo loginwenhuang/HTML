@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        span{
+            display: inline-block;
+            border:1px solid red ;
+            margin-left: 10px;
+            margin-top: 10px;
+            width: 60px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+<script>
+    //document.getElementById('b').innerHTML="<span></span>";
+
+    //var count=0;
+    //var sec = [];
+    for(var i=1;i<=9;i++){
+        for(var k=1;k<=i;k++){
+            //document.write(k+"*"+i+"="+(i*k)+"&nbsp;&nbsp;");
+            sec = "<span>"+k+"*"+i+"="+(i*k)+"</span>";
+            document.write(sec);      
+        }
+        document.write("<br />");
+    }
+    //document.getElementById('b').innerHTML=sec;
+    //alert(sec);
+    //var spans = document.getElementsByTagName('span');
+    //spans[1].innerHTML="大家好"
+    //document.write("<span></span>");
+</script>
+</html>

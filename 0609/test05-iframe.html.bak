@@ -1,0 +1,73 @@
+<!DOCTYPE HTML >
+<html>
+ <head>
+  <title>  </title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="">
+  <style type="text/css">
+	*{
+		padding:0px;
+		margin:0px;
+	}
+	.menu{
+		float:left;
+		margin-left:100px;
+		margin-top:200px;
+	}
+	ul{
+		list-style:none;
+		padding:0px;
+		overflow:hidden;
+	}
+	.list01{
+		width:100px;
+		background:gray;
+		text-align:center;
+		height:30px;
+
+		transition:height 1s;
+	}
+	h4{
+		line-height:30px;
+	}
+	a{	
+		color:black;
+		font-size:10px;
+		line-height:30px;
+		display:block;
+		text-decoration:none;
+		background:black;
+		
+		
+	}
+	.list01:hover{
+		height:90px;
+	}
+	a:hover{
+		opacity:0.5;
+		color:black;
+	}
+	iframe{
+		float:right;
+		margin-right:200px;
+		margin-top:150px;
+		width:600px;
+		height:300px;
+
+		border:2px solid blue;
+	}
+  </style>
+ </head>
+
+ <body>
+		<ul class="menu">
+			<li class="list01"><h4>商品管理</h4>
+				<ul>
+					<li class="list02"><a href="https://www.bilibili.com" target="a_win" >商品查询</a></li>
+					<li class="list03"><a href="#" target="a_win" >商品添加</a></li>
+				</ul>
+			</li>
+		</ul>
+		<iframe name="a_win" src=""></iframe>
+ </body>
+</html>

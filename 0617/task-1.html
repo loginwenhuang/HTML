@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        根据提供的小人动画素材，实现通过按键控制小人移动
+    </title>
+    <style>
+        img{
+            position: absolute;
+            left: 400px;
+            top: 300px;
+        }
+        #boomerang{
+            position: absolute;
+            display: none;
+        }
+    </style>
+    <script>
+        var dir = 1;
+        var para = 1;
+        //var arr = [];
+        var flag = true;
+        document.onkeydown = function(e){
+            //alert(e.keyCode);
+            //alert(man.offsetTop);
+            switch(e.keyCode){
+                case 39://→
+                    man.style.left=man.offsetLeft+10+"px";
+                    dir = 1;
+                    manMove(dir);
+                    break;
+                case 37:
+                    man.style.left=man.offsetLeft-10+"px";
+                    dir = -1;
+                    manMove(dir);
+                    break;
+                case 38:
+                    man.style.top=man.offsetTop-10+"px";
+                    manMove(dir);
+                    break;
+                case 40:
+                    man.style.top=man.offsetTop+10+"px";
+                    manMove(dir);
+                    break;
+                case 32:
+                    if(flag){
+                        dir1=dir;
+                        animate(man);
+                        flag = false;
+                    }
+                    break;
+                case 88:
+                    boomeRang(dir);
+                    break;
+            }
+        }  
+        function manMove(dir){
+            if(para==1){
+                var src = "img/"+(12-1)*dir+".png";
+                man.src = src;
+                para=-1;
+            }else if(para==-1){
+                var src = "img/"+(11+1)*dir+".png";
+                man.src = src;
+                para=1;
+            }
+        }
+
+        function animate(img){
+            man.src='img/'+(14)*dir1+".png";
+            var d=0;
+            var h = man.offsetTop;
+            var rl = man.offsetLeft;
+            var t = setInterval(
+                function(){
+                if(d<100){
+                    img.style.top=h+"px";
+                    img.style.left=rl+(d*1.5)*dir1+"px";
+                    h--;
+                    d++;
+                    
+                }else if(d<200){
+                    img.style.top=h+"px";
+                    img.style.left=rl+(d*1.5)*dir1+"px";
+                    h++;
+                    d++;
+                }else{
+                   clearInterval(t); 
+                   manMove(dir1);
+                   flag=true;
+                }
+            },1);   
+        }
+        function boomeRang(dir){
+            man.src ="img/"+(13*dir)+".png";
+            boomerang.style.display="block";
+            boomerang.style.top = man.offsetTop+50+"px";
+            boomerang.style.left = man.offsetLeft+(60*dir)+"px";
+            var rl1= boomerang.offsetLeft;
+            var d1=0;
+            var speed=10;
+            var t1=setInterval(function(){
+                speed*=1.1;
+                if(d1<100){
+                    boomerang.style.left=rl1+(d1+speed)*4*dir+"px";
+                    d1++;
+                }else{
+                    clearInterval(t1);
+                    boomerang.style.display="none";
+                    manMove(dir);
+                }
+            },10);
+        }
+        
+    </script>
+</head>
+<body>
+    <img src="img/12.png" alt="" id="man">
+    <img src="img/biao.png" alt="" id="boomerang">
+</body>
+</html>

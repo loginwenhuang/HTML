@@ -1,0 +1,59 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>判断这个日期是这一年的第几天</title>
+        <script>
+            var Y = Number(prompt("年份:",""));
+            var M = Number(prompt("月份:",""));
+            var D = Number(prompt("日:",""));
+            var flag = 0;
+            if(Y%4==0&&Y%100!=0||Y%400==0){
+                flag = 1;
+            }
+            switch(M){
+                case 1 :
+                    document.write("这是"+D+"年的第"+(D)+"天");
+                    break;
+                case 2 :
+                    document.write("这是"+D+"年的第"+(31+D)+"天");
+                    break;
+                case 3 :
+                    document.write("这是"+D+"年的第"+(31+28+D+flag)+"天");
+                    break;
+                case 4 :
+                    document.write("这是"+D+"年的第"+(31*2+28+D+flag)+"天");
+                    break;
+                case 5 :
+                    document.write("这是"+D+"年的第"+(31*2+30+28+D+flag)+"天");
+                    break;
+                case 6 :
+                    document.write("这是"+D+"年的第"+(31*3+30+28+D+flag)+"天");
+                    break;
+                case 7 :
+                    document.write("这是"+D+"年的第"+(31*3+30*2+28+D+flag)+"天");
+                    break;
+                case 8 :
+                    document.write("这是"+D+"年的第"+(31*4+30*2+28+D+flag)+"天");
+                    break;
+                case 9 :
+                    document.write("这是"+D+"年的第"+(31*5+30*2+28+D+flag)+"天");
+                    break;
+                case 10 :
+                    document.write("这是"+D+"年的第"+(31*5+30*3+28+D+flag)+"天");
+                    break;
+                case 11 :
+                    document.write("这是"+D+"年的第"+(31*6+30*3+28+D+flag)+"天");
+                    break;
+                case 12 :
+                    document.write("这是"+D+"年的第"+(31*6+30*4+28+D+flag)+"天");
+                    break;  
+            }
+        </script>
+    </head>
+    <body>
+        
+    </body>
+    </html>

@@ -1,0 +1,106 @@
+<!DOCTYPE HTML >
+<html>
+ <head>
+  <title>  </title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="">
+  <style type="text/css">
+	*{
+		padding:0px;
+		margin:0px;
+		overflow:hidden;
+	}
+	body{
+		background-color: yellow;
+	}
+	#div-top{
+		background-color: black;
+		width: 100%;
+		height: 100px;
+	}
+	#div-top h1{
+		color: white;
+		font-size: 30px;
+		line-height:100px ;
+		text-indent: 1em;
+	}
+	.menu{
+		float: left;
+	}
+	ul{
+		list-style:none;
+	}
+	.list01{
+		width:200px;
+		background:gray;
+		text-align:center;
+		height:60px;
+
+		transition:height 1s;
+	}
+	.list01 h6{
+		color: white;
+		font-size: 20px;
+		line-height:60px;
+	}
+	.list02{
+
+	}
+	a{
+		color:white;
+		background:black;	
+		font-size:10px;
+		line-height:60px;
+		display:block;
+		text-decoration:none;
+		opacity: 0.5;		
+	}
+	.list01:hover{
+		height:180px;
+	}
+	.list02:hover a{
+		opacity: 1;
+		color:red;
+	}
+	iframe{
+		
+		/*margin-right:80px;
+		margin-top:30px;*/
+		width: 800px;
+		height:400px;
+
+		display: block;
+		margin: 60px auto;
+
+		border:none;
+	}
+  </style>
+ </head>
+
+ <body>
+	 	<div id="div-top">
+			 <h1>商品管理后台</h1>
+		 </div>
+		<ul class="menu">
+			<li class="list01"><h6>网站</h6>
+				<ul>
+					<li class="list02"><a href="https://www.bilibili.com" target="a_win" >B站</a></li>
+					<li class="list02"><a href="test01-a.html" target="a_win" >菜单</a></li>
+				</ul>
+			</li>
+			<li class="list01"><h6>菜单练习</h6>
+				<ul>
+					<li class="list02"><a href="test01-b.html" target="a_win" >第一遍练习</a></li>
+					<li class="list02"><a href="test01.html" target="a_win" >第二遍练习</a></li>
+				</ul>
+			</li>
+			<li class="list01"><h6>每日作业</h6>
+				<ul>
+					<li class="list02"><a href="../task-0608/新疆旅游网-div/xj-div.html" target="a_win" >新疆旅游网</a></li>
+					<li class="list02"><a href="../0606/test01.html" target="a_win" >test01</a></li>
+				</ul>
+			</li>
+		</ul>
+		<iframe name="a_win" src=""></iframe>
+ </body>
+</html>

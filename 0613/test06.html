@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1--100的总和，奇偶和，以及三的倍数</title>
+    <script>
+        var i = 1;
+        var sum = 0;
+        var sum1 =0;
+        var sum2 = 0;
+        var flag=0;
+        while(i<=100){
+            sum += i;
+            if(i%2==0){
+                sum1+=i;
+            }else{
+                sum2+=i;
+            }
+            i++;
+            if(i%3==0&&flag<5){
+                flag++;
+                document.write(i+"&nbsp;&nbsp;&nbsp;&nbsp;");
+            }else if(flag==5){
+                flag=0;
+                document.write("<br />");
+            }
+        }
+        document.write("<br />");
+        document.write("1--100的和："+sum);
+        document.write("<br />");
+        document.write("1--100的偶数和："+sum1);
+        document.write("<br />");
+        document.write("1--100的奇数和："+sum2);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

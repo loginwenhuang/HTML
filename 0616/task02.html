@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+    </title>
+    <style>
+        div{
+            width: 200px;
+            margin: 100px auto;
+            text-align: center;
+        }
+    </style>
+    <script>
+        var i = 0;
+        function lastImg(){
+            if(i==0){
+                i=9;
+            }else{
+                i--;
+            }
+            var str = "js"+i+".gif"
+            var zombies = document.getElementById("js");
+            zombies.src="../img-zombies/"+str;
+        }
+        function nextImg(){
+            if(i==9){
+                i=0;
+            }else{
+                i++;
+            }
+            var str = "js"+i+".gif"
+            var zombies = document.getElementById("js");
+            zombies.src="../img-zombies/"+str;
+        }
+        //setInterval(lastImg,100);
+    </script>
+</head>
+<body>
+    <div>
+        <!--<input type="button" value="上一张" onclick="lastImg()">
+        <input type="button" value="下一张" onclick="nextImg()">-->
+        <img src="../img-zombies/js0.gif" alt="读报纸的僵尸" id="js">
+    </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        五分钟倒计时
+    </title>
+    <style>
+        h2{
+            text-align: center;
+            margin-top:80px;
+        }
+        h1{
+            border: 3px solid yellow;
+            background-color: black;
+            width: 200px;
+            height: 200px;
+            margin: 0px auto;
+            text-align: center;
+            color: red;
+            line-height: 200px;
+        }
+        div{
+            text-align: center;
+        }
+    </style>
+    <script>
+        var  t;
+        var flag=true;
+        var s = 59;
+        var m = 4;
+        function startTime(){
+            var res;
+            if(flag){
+                flag = false;
+                t=setInterval(function(){
+                if(m<0){
+                    stopTime();
+                    s=59;
+                    m=4;
+                    return ;
+                }
+                if(s>=10){
+                    res = "0"+m+":"+s;
+                    s--;
+                }else if(s>=0){
+                    res = "0"+m+":"+"0"+s;
+                    s--;
+                }else{
+                    s=59;
+                    m--;
+                }
+                h1.innerText=res;
+                },1000);
+                }
+            
+        }
+        function stopTime(){
+            clearInterval(t);
+            flag=true;
+        }
+    </script>
+</head>
+<body>
+    <h2>5分钟计时器</h2>
+    <h1 id="h1">
+        05:00
+    </h1>
+    <div>
+        <input type="button" name="" id="" value="开始" onclick="startTime()" />
+        <input type="button" value="停止" onclick="stopTime()" />
+    </div>
+</body>
+</html>

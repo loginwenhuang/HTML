@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        根据提供素材实现图片的自动切换
+    </title>
+    <style>
+        div{
+            width: 200px;
+            margin: 100px auto;
+            text-align: center;
+        }
+    </style>
+    <script>
+        var i = 0;
+        setInterval(function(){
+            if(i==9){
+                i=0;
+            }else{
+                i++;
+            }
+            var str = "js"+i+".gif"
+            //var zombies = document.getElementById("js");
+            js.src="../img-zombies/"+str;
+        }
+            ,100);
+    </script>
+</head>
+<body>
+    <div>
+        <img src="../img-zombies/js0.gif" alt="读报纸的僵尸" id="js">
+    </div>
+</body>
+</html>

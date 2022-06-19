@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    table{
+        border:1px solid black;
+        margin: 0px auto;
+        border-collapse: collapse;
+    }
+    tr,td{
+        border: 1px solid black;
+    }
+    .color1{
+        color: red;
+    }
+    .color2{
+        color: green;
+    }
+    .td1{
+        text-align: center;
+    }
+
+    </style>
+    
+</head>
+<body>
+    <form action="" method="post">
+        <table>
+            <tr>
+                <td class="color1">
+                    姓名
+                </td>
+                <td>
+                    <input type="text" value="123">
+                </td>
+            </tr>
+            <tr class="color1">
+                <td >
+                    密码
+                </td>
+                <td>
+                    <input type="password" value="123">
+                </td>
+            </tr>
+            <tr >
+                <td class="color2">
+                    性别
+                </td>
+                <td>
+                    <input type="radio" name="sex" id="">男
+                    <input type="radio" name="sex">女
+                </td>
+            </tr>
+            <tr>
+                <td class="color2">
+                    城市
+                </td>
+                <td>
+                    <select name="" id="">
+                    <option value="">请选择</option>
+                    <option value="hn">河南</option>
+                    <option value="hb">河北</option>
+    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    爱好
+                </td>
+                <td>
+                    <input type="checkbox" name="dq" value="打球" />打球
+                    <input type="checkbox" name="dq" value="打球" />听歌
+                    <input type="checkbox" name="dq" value="打球" />跳舞
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    自我介绍
+                </td>
+                <td>
+                    <textarea name="" id="" cols="10" rows="3"></textarea>
+                </td>
+            </tr>
+            <tr >
+                <td colspan="2" class="td1">
+                    <input type="submit">
+                    <input type="reset">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

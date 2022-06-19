@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<script>
+    var a = [];
+    for(var i=0;i<5;i++){
+        a[i]=prompt("姓名","");
+        document.write("同学名字:"+a[i]+"<br />");
+    }
+    document.write(a.length+"<br />");
+    document.write(a);
+    document.write("<br />");
+    console.log(a);
+    //for each 的方式遍历数组
+    for(var i in a){
+        document.write(a[i]);
+    }
+</script>
+<body>
+
+</body>
+</html>

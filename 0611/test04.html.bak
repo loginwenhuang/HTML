@@ -1,0 +1,37 @@
+<!DOCTYPE HTML >
+<html>
+ <head>
+  <title>  </title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="">
+  <style type="text/css">
+
+  </style>
+  <script >
+	//prompt:弹出输入框，输入内容储存到name中
+	var name = prompt("请输入名字：","");
+	document.write("你输入的名字是："+ name);
+	//
+	var num = 200;
+	var s1 ="100";
+	var s2 = 100;
+	document.write("<hr />")
+	document.write(s1+num);
+	document.write("<hr/>");
+	document.write(s2+num);
+
+	var xxx;
+	var d =new Date();
+	alert(xxx);
+	alert(d);
+	alert(d.getFullYear());
+
+
+	
+  </script>
+ </head>
+
+ <body>
+	
+ </body>
+</html>

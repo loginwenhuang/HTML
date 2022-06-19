@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        猜数字
+    </title>
+
+</head>
+<body>
+    <form action="" id="form">
+        <fieldset>
+            <legend >猜数字</legend>
+            <p>
+                猜一个数字：
+                <input type="text" value="" placeholder="请在这里输入1-100以内的整数" id="num"/>
+                <input type="button" value="猜一猜" onclick="myGuess()">
+            </p>
+            <p id="output">
+
+            </p>
+        </fieldset>
+    </form>
+    <style>
+        fieldset{
+            border: 1px solid black;
+            width: 600px;
+            margin:20px auto;
+        }
+        p{
+            text-align: center;
+        }
+        input[type='text']{
+            width: 200px;
+        }
+
+    </style>
+    <script>
+        function againGuess(flag){
+            if(flag){
+                    //continue;
+            }else{
+                var form = document.getElementById("form");
+                form.innerHTML="游戏结束,再见!";
+            }
+            n = parseInt(Math.random()*100)+1;
+            //alert(n);
+            count = 0;   
+            num.value="";
+        }
+        function myGuess(){
+            var num = Number(document.getElementById("num").value);
+            if(count==5){
+                var flag = confirm("游戏结束!\n是否继续？");
+                againGuess(flag);
+            }
+            if(n==num){
+                //output.innerText="恭喜你答对了!";
+                //output.style.color="pink";
+                alert("恭喜你答对了!");
+                var flag = confirm("游戏结束!\n是否继续？");
+                againGuess(flag);
+            }else{
+                count++;
+                var sec = n<num?"太大了!":"太小了!";
+                output.innerText="第"+count+"次猜测(最多猜五次):"+num+sec;
+                output.style.color="green";
+                document.getElementById("num").value="";
+            }
+        }
+        var n;
+        var count;
+        againGuess(1);
+            
+    </script>
+</body>
+</html>

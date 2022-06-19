@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+    </title>
+</head>
+<body>
+    <div id="fath">
+        <h1 id="sib1">大哥</h1>
+        <span id="sib2">二哥</span>
+        <p id="sib3">三弟</p>
+    </div>
+    <script>
+        for(var i = 0;i<fath.children.length;i++){
+            alert(fath.children[i].innerText+" "+fath.children[i].nodeType+" "+fath.children[i].nodeName);
+        }
+        //找大哥
+        alert(fath.children[0].innerText+fath.firstElementChild.innerText+fath.children[1].previousElementSibling.innerText+sib2.parentElement.children[0].innerText);
+        
+    </script>
+</body>
+</html>

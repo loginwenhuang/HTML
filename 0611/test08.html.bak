@@ -1,0 +1,20 @@
+<!DOCTYPE HTML >
+<html>
+ <head>
+  <title>  </title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="">
+  <style type="text/css">
+
+  </style>
+  <script>
+	var name =prompt("请输入你的名字","whc");
+	var res = name == "whc"?"富豪+帅哥":"应该输入whc的";
+	alert(res);
+  </script>
+ </head>
+
+ <body>
+	
+ </body>
+</html>

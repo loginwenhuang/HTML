@@ -1,0 +1,40 @@
+*{
+	padding:0px;
+	margin:0px;
+	/*border:1px solid red;*/
+}
+#con{
+	/*border:1px solid blue;*/
+	width:782px;
+	height:998px;
+	margin:0px auto;
+
+	overflow:auto;
+}
+#top{
+	width:780px;
+	height:200px;
+	float:left;
+}
+#ten_a{
+	width:780px;
+	height:33px;
+
+	text-align:center;
+
+	float:left;
+}
+#ten_a a{
+	
+	background:url(images/button1.jpg) no-repeat;
+	text-decoration:none;
+	display:inline-block;
+	width:78px;
+	line-height:33px;
+}
+#ten_a a:hover{
+	font-weight:bold;
+	background:url(images/button1_bg.jpg) no-repeat;
+}
+
+

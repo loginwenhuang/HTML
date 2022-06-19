@@ -1,0 +1,37 @@
+<!DOCTYPE HTML >
+<html>
+ <head>
+  <title>  </title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="">
+  <style type="text/css">
+		ul{
+			
+			list-style:outside;
+		}
+		li{
+			width:100px;
+			text-align:center;	
+		}
+		a{
+			background:gray;
+			text-decoration:none;
+			display:block;
+		}
+		a:hover{
+			background:red;
+		}
+  </style>
+ </head>
+
+ <body>
+	<ul>
+		<li><a href="#">这是菜单1</li>
+		<li><a href="#">这是菜单2</li>
+		<li><a href="#">这是菜单3</li>
+		<li><a href="#">这是菜单4</li>
+		<li><a href="#">这是菜单5</li>
+		<li><a href="#">这是菜单6</li>
+	</ul>
+ </body>
+</html>

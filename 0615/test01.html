@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script>
+        var arr =new Array(5);
+        var count=0;
+        for(var i =0;i<arr.length;i++){
+            arr[i] = Number(prompt("请输入第"+(i+1)+"个同学的成绩:",""));
+        }
+        var num = Number(prompt("请输入要查询的成绩",""));
+        for(var i in arr){
+            if(arr[i]==num){
+                document.write("第"+(Number(i)+1)+"个同学的成绩是"+num+"分<br />");
+                count++;
+            }
+        }
+        if(count==0){
+            alert("对不起，没有查到"+num+"分的同学");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

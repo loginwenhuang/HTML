@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        b{
+            color:red;
+
+        }
+        div b{
+            color:green;
+        }
+        div>b{
+            color:blue;
+        }
+        input[type='text']{
+            border: 1px solid red;
+        }
+        [type='password']{
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <b>这是body下的b</b>
+    <div>
+        <b>这是div下的b</b>
+        <span>
+            <b>这是span下的b</b>
+        </span>
+    </div>
+    <hr />
+    姓名：<input type="text" name="xm" />
+    密码：<input type="password" name="mm" />
+</body>
+</html>

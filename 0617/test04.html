@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+    </title>
+    <script>
+        function sendCode(){
+            btnSend.disabled = true;
+            var i = 10;
+            var t = setInterval(function(){
+                if(i==-1){
+                    clearInterval(t);
+                    btnSend.value="发送验证码";
+                    btnSend.disabled=false;
+                    
+                }else{
+                    btnSend.value="发送验证码("+i+"秒)";
+                }
+                i--;
+            },1000)
+        }
+    </script>
+</head>
+<body>
+    <p>
+        验证码：
+        <input type="text" />
+        <input type="button" name="" id="btnSend" value="发送验证码" onclick="sendCode()" />
+    </p>
+</body>
+</html>

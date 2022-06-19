@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    var i=0;
+    for(i=0;i<3;i++){
+        var score = Number(prompt("请输入第"+(i+1)+"个同学的成绩",""));
+        if(i==0){
+            document.write("第一个同学的成绩:"+"<br />");
+        }else if(i==1){
+            document.write("第二个同学的成绩:"+"<br />");
+        }else{
+            document.write("第三个同学的成绩:"+"<br />"); 
+        }
+        if(score>=90){
+            document.write(score+"<br />"+"优秀"+"<br /><br />");
+        }else if(score>=70){
+            document.write(score+"<br />"+"良"+"<br /><br />");
+        }else if(score>=60){
+            document.write(score+"<br />"+"中"+"<br /><br />");
+        }else{
+            document.write(score+"<br />"+"差"+"<br /><br />");
+        }
+    }
+</script>
+<body>
+    
+</body>
+</html>

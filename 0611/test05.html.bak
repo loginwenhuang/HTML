@@ -1,0 +1,43 @@
+<!DOCTYPE HTML >
+<html>
+ <head>
+  <title>  </title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="">
+  <style type="text/css">
+
+  </style>
+  <script>
+	var n = 10 ;
+	var m = n++;
+	document.write("n的值是:"+n+"<br />"+"m的值是"+m+"<br />");
+	var l = ++n;
+	document.write("l的值是:"+l+"<br />");
+	
+	var x = 10;
+	document.write(++x);
+	document.write("<br />");
+	document.write(x);
+	
+	var n1 = "10";
+	var n2 = 20;
+	var n3 = 10;
+	document.write(n1+n2);
+	document.write("<br />");
+	document.write(n2+n3);
+	document.write("<br />");
+	document.write(n2-n3);
+	document.write("<br />");
+	document.write(n2*n3);
+	document.write("<br />");
+	document.write(n2/n3);
+	document.write("<br />");
+	document.write(n1%n2);
+	document.write("<br />");
+  </script>
+ </head>
+
+ <body>
+	
+ </body>
+</html>

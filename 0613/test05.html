@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var score = parseInt(Number(prompt("输入分数",""))/10);
+        switch(score){
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+                document.write("不及格");
+                break;
+            case 6:
+            case 7:
+                document.write("及格");
+                break;
+            case 8:
+            case 9:
+            case 10:
+                document.write("优");
+                break;
+            default:
+                document.write("成绩不正确");
+                break;
+        }
+    </script>
+</head>
+    
+<body>
+    
+</body>
+</html>

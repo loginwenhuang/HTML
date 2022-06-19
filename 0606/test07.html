@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        div{
+            background-color: aqua;
+            height: 20px;
+            width: 5px;
+            overflow: hidden;
+            transition: width 3s;
+        }
+        div:hover{
+            width: 100%;
+        }
+        ul{
+            list-style: none;
+            width: auto;
+            padding: 0px;
+        }
+        #mu li ul{
+
+            width: 20px;
+            height: 20px;
+            overflow: hidden;
+            background-color: black;
+            transition-property: width height background-color;
+            transition-duration: 1s 2s;
+        }
+        #mu>li:hover>ul{
+            width: 640px;
+            height: 640px;
+            background-color: gold;
+
+        }
+    </style>
+</head>
+<body>
+    <div>&nbsp;&nbsp;现在你是不是可以看到我了</div>
+    <ul id="mu">
+        <li>
+            藏起来的目小温
+            <ul>
+                <li>
+                    <!--<img src="../img/2.jpg" />-->
+                    这只是一个背景
+                </li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>

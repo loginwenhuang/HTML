@@ -1,0 +1,20 @@
+<!DOCTYPE HTML >
+<html>
+ <head>
+  <title>  </title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="">
+  <style type="text/css">
+	
+  </style>
+  <script>
+	alert(!true);
+	var flag = 3+5>9 && 5*(2-3)<-12 || 7/2==10 && 34/5!=18 || (!(1==5));
+	alert(计算结果是：flag);
+  </script>
+ </head>
+
+ <body>
+	
+ </body>
+</html>

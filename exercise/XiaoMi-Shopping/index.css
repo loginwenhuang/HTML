@@ -1,0 +1,375 @@
+body{
+    margin: 0px;
+    padding: 0px;;
+}
+#top{
+    margin: 0px;
+    padding: 0px;
+
+    width: 100%;
+    height: 40px;
+    background-color: black;
+}
+.top_center{
+    width: 1226px;
+    height: 40px;
+    margin: 0px auto;
+    /*background-color: green;*/
+}
+.top_center ul{
+    margin: 0px;
+    padding: 0px;
+
+    height: 40px;
+    list-style: none;
+    line-height: 40px;
+    color: white;
+    font-size: 12px;
+    /*background-color: red;*/
+}
+.left_ul{
+    float: left;
+}
+.left_ul li{
+    float: left;
+}
+.right_ul{
+    float: right;
+}
+.right_ul li{
+    float: left;
+}
+.top_center ul li>a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    opacity: 0.7; 
+}
+.top_center ul li>a:hover{
+    opacity: 1;
+}
+#shop_cart{
+    float: right;
+    height: 40px;
+    width: 120px;
+    margin: 0px 20px;
+    text-align: center;
+    background-color: orange;
+}
+#shop_cart a{
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 40px;
+}
+#shop_cart:hover{
+    background-color: gray;
+}
+/*第二行*/
+#second{
+    width: 1226px;
+    height: 100px;
+    margin: 0px auto;
+    padding: 0px;
+    /*background-color: red;*/
+}
+.a1{
+    display:block;
+    float: left;
+    width: 50px;
+    height: 100px;
+    background: url(image/logo_top.png) no-repeat center center;
+}
+.a2{
+    display:block;
+    float: left;
+    width: 180px;
+    height: 100px;
+    background: url(image/yyymix.gif) no-repeat center center;
+}
+.nav1{
+    float: left;
+    height: 100px;
+    text-align: center;
+
+    /*background-color: green;*/
+}
+.nav1>a{
+    color: black;
+    line-height: 100px;
+    text-decoration: none;
+    margin-left: 20px;
+}
+.nav1>a:hover{
+    color: red;
+}
+.sousuo{
+    float: right;
+    height: 100px;
+    width: 300px;
+    /*border: 1px solid green;*/
+
+    text-align: center;
+}
+.sousuo td{
+    /*border: 1px solid green;*/
+    height: 50px;
+}
+.sousuo input{
+    width: 250px;
+    height: 50px;
+}
+/*第三行*/
+#third{
+    margin: 0px auto;
+    padding: 0px;
+    width: 1226px;
+    height: 460px;
+    background: url(image/banner2.jpg) no-repeat;
+    
+}
+#box-left{
+    position: relative;
+    width: 234px;
+    height: 459px;
+    background-color: black;
+    border-top: 1px solid black;
+}
+.third_ul_left{
+    list-style: none;
+    width: 234px;
+    height: 440px;
+    background-color: black;
+    margin-top:10px;
+    padding: 0px;
+}
+.third_ul_left li{
+    width: 234px;
+    height: 40px;
+
+}
+.third_ul_left li>a{
+    color: white;
+    text-decoration: none;
+    line-height: 40px;
+    font-size: 14px;
+    
+    display: inline-block;
+    margin-left: 20px;
+}
+.third_ul_left li:hover{
+    background-color:gray;
+}
+/*隐藏部分 右*/
+.box-right{
+    position:absolute;
+    width: 800px;
+    height: 460px;
+    background-color: white;
+    left:234px;
+    top:0px;
+    display: none;
+}
+.third_ul_left li:hover>.box-right{
+    display: block;
+}
+.d_l{
+    float: left;
+    width: 265px;
+    height: 460px;
+    /*background-color: red;*/
+}
+.d_c{
+    float: left;
+    width: 265px;
+    height: 460px;
+    /*background-color: green;*/
+}
+.d_r{
+    float: left;
+    width: 265px;
+    height: 460px;
+}
+.box-right>div>span{
+    display: block;
+    width: 250px;
+    height: 70px;
+    /*background-color: pink;*/
+    margin-top: 6px;
+    margin-left: 10px;
+    
+    line-height: 70px;
+}
+.box-right>div>span>img{
+    margin-left:20px;
+    vertical-align: middle;
+}
+.box-right>div>span>a{
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+}
+.box-right>div>span>a:hover{
+    color: red;
+}
+.box-right>div>span>div{
+
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px;
+    width: 50px;
+    height: 30px;
+    border: 1px solid orange;
+    text-align: center;
+    
+}
+.box-right>div>span>div>a{
+    color: orange;
+    display: block;
+    font-size: 12px;
+    line-height: 30px;
+    text-decoration: none;
+}
+.box-right>div>span>div:hover{
+    background-color: orange;
+    
+}
+.box-right>div>span>div:hover>a{
+    color: white;
+}
+#fourth{
+    width: 1226px;
+    height: 170px;
+    margin: 15px auto;
+    /*background-color: red;*/
+}
+.fo_1{
+    float: left;
+    width: 234px;
+    height: 170px;
+    /*background-color: green;*/
+}
+.fo_1>a{
+    float: left;
+    display: block;
+    width: 78px;
+    height: 85px;
+    opacity: 0.7;
+}
+.fo_1>a:hover{
+    opacity: 1;
+}
+.fo_234{
+    width: 316px;
+    height: 170px;
+    float: left;
+    margin-left: 14px;
+    opacity: 0.8;
+}
+.fo_234>a>img{
+    width: 316px;
+    height: 170px;
+}
+.fo_234:hover{
+    opacity: 1;
+}
+h1{
+    width: 1226px;
+    height: 58px;
+    margin: 0px auto;
+    line-height: 58px;
+    font-size: 22px;
+    margin-top: 20px;
+}
+#fifth{
+    width: 1226px;
+    height: 340px;
+    margin: 0px auto;
+    /*background-color: orange;*/
+}
+#fifth>div{
+    width: 234px;
+    height: 339px;
+    float: left;
+
+    background-color: rgb(250,250,250);
+}
+.fif_2{
+    margin-left: 14px;
+}
+#fifth>div{
+    text-align: center;
+}
+#fifth img{
+    width: 160px;
+    height: 160px;
+}
+#fifth>div>a{
+    display: block;
+    width: 160px;
+    height: 160px;
+    margin: 0px auto;
+    margin-top: 37px;
+    opacity: 0.8;
+}
+#fifth>div>a:hover{
+    opacity: 1;
+}
+
+#sixth{
+    width: 1226px;
+    height: 672px;
+    background-color: rgb(245, 245, 245);
+    margin: 20px auto;
+}
+#sixth>h1{
+    width: 1226px;
+    height: 58px;
+}
+#sixth>div{
+    width: 234px;
+    height: 300px;
+    float: left;
+    margin-top: 5px;
+    margin-bottom: 10px;
+
+    background-color: white;
+    text-align: center;
+}
+#sixth>div:hover{
+    box-shadow: 0px 0px 10px 10px gray;
+}
+#sixth .six_1>a{
+    display: block;
+    width: 234px;
+    height: 300px;
+}
+#sixth .six_2{
+    margin-left: 14px;
+}
+.six_span{
+    display: none;
+    width: 234;
+    height: 80px;
+    margin-top: -72px;
+    background-color: #ff6700;
+}
+.six_span>a{
+    line-height: 40px;
+    text-decoration: none;
+    color:white;
+    font-size: 12px;
+}
+#sixth>div:hover span{
+    display: block;
+    z-index: 9;
+}
+#sixth>div:hover>p{
+    color: #ff6700!important;
+}
+footer{
+    text-align: center;
+    font-size: 12px;
+    margin-top: 46px;
+}

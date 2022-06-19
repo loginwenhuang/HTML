@@ -1,0 +1,34 @@
+<!DOCTYPE HTML >
+<html>
+ <head>
+  <title>  </title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="">
+  <style type="text/css">
+
+  </style>
+  <script>
+	var n1=prompt("请输入第一个数:","请不要放一些奇奇怪怪的米jia");
+	var n2=prompt("请输入第一个数:","俺也一样");
+	/*
+	n1 = parseInt(n1);
+	n2 = parseFloat(n2);
+	*/
+	n1 = Number(n1);
+	n2 = Number(n2);
+	document.write(n1 + " " + typeof(n1) +"<br />");
+	document.write(n2 + " " + typeof(n2) +"<br />");
+	
+	if(isNaN(n1) || isNaN(n2)){
+		alert("输入的是什么呀，算个锤锤");
+	}else{
+		var res = n1+n2;
+		document.write("结果:"+res);
+	}
+  </script>
+ </head>
+
+ <body>
+	
+ </body>
+</html>

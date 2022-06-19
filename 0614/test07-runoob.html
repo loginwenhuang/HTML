@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script>
+        
+        /*confirm("ok");
+        function add(){
+            var count = 0;
+            function plus(){
+                count++;
+            }
+            return count;
+        }
+        var add = (function(){
+            var count=0;
+            return function(){
+                return count+=1;
+            }
+        })();
+        add();
+        add();
+        alert(add());*/
+
+        let runoob = class {
+            constructor(name,year){
+                this.name = name ;
+                this.year = year;
+            }
+            age() {
+                let date = new Date();
+                return date.getFullYear() - this.year;
+            }
+        }
+        //document.write(runoob.name);
+        //document.write(runoob.url);
+        //console.log(runoob.name);
+        //var w=new runoob("whc","yyds");
+        //console.log(w);
+        //document.write(w.name);
+        let w =new runoob("whc","1998");
+        console.log(w.age());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

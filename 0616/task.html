@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        1.定义如下数组:
+            var ary = [3,9,6,7,1];
+        2.使用冒泡排序让数组有序
+        3.输入一个1-9之间的数，插入到数组中，要求插入之后数组依旧有序
+    </title>
+    <script>
+        var arr = [3,9,6,7,1];
+        var num = Number(prompt("插入的数据：",""));
+        for(var i =0;i<arr.length;i++){
+            for(var k=0;k<arr.length-i;k++){
+                if(arr[k]>arr[k+1]){
+                    var temp = arr[k+1];
+                    arr[k+1] = arr[k];
+                    arr[k] = temp;
+                }
+            }
+        }
+        /*arr[arr.length]=num;
+        for(var i = arr.length-1;i>=0;i--){
+            if(arr[i]<arr[i-1]){
+                var temp = arr[i-1];
+                arr[i-1] = arr[i];
+                arr[i] = temp;
+            }else{
+                break;
+            }
+        }*/
+        var count;
+        for(var i = 0 ;i<arr.length;i++){
+            if(arr[i]>num){
+                count = i;
+                // arr.splice(i,0,num);
+                // count++;
+                // if(count==20){
+                //     break;
+                // }
+                break;
+            }
+        }
+        if((typeof count)=="undefined"){
+            count = arr.length;
+        }
+        arr.splice(count,0,num);
+        document.write(arr);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

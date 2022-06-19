@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三级滑动菜单</title>
+    <style type="text/css">
+        div{
+            margin-top: 100px;
+            margin-left: 100px;
+        }
+        ul {
+            float: left;
+            padding: 0px;
+            margin: 0px;
+
+            width: 120px;
+            text-align: center;
+            background-color: aqua;
+
+            overflow: hidden;
+            
+        }
+        .first > ul{
+			
+            height: 63px;
+            background-color: blueviolet;
+            transition: height 1s;
+
+        }
+        .second ul{
+            height: 0px;
+            background-color: blue;
+            transition: height 1s;
+
+        }
+        .first:hover>ul{
+            /*display: block;*/
+            height: 84px;
+           /* overflow: visible;*/
+        }
+        .second:hover ul{
+            height: 63px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <ul>
+        <li class="first">一级菜单01
+            <ul>
+                <li class="second">二级菜单01
+                    <ul>
+                        <li>三级菜单01</li>
+                        <li>三级菜单02</li>
+                        <li>三级菜单03</li>
+                    </ul>
+                </li>
+                <li class="second">二级菜单02
+                    <ul>
+                        <li>三级菜单01</li>
+                        <li>三级菜单02</li>
+                        <li>三级菜单03</li>
+                    </ul>
+                </li>
+                <li class="second">二级菜单03
+                    <ul>
+                        <li>三级菜单01</li>
+                        <li>三级菜单02</li>
+                        <li>三级菜单03</li>
+                    </ul>
+                </li>
+
+            </ul>
+        </li>
+        <li class="first">一级菜单02
+            <ul>
+                <li class="second">二级菜单
+                    <ul>
+                        <li>三级菜单01</li>
+                        <li>三级菜单02</li>
+                        <li>三级菜单03</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="first">一级菜单03
+            <ul>
+                <li class="second">二级菜单
+                    <ul>
+                        <li>三级菜单01</li>
+                        <li>三级菜单02</li>
+                        <li>三级菜单03</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    </div>
+</body>
+</html>

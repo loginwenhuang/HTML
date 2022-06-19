@@ -1,0 +1,80 @@
+<!DOCTYPE HTML >
+<html>
+ <head>
+  <title>  </title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="">
+  <style type="text/css">
+	*{	
+		padding:0px;
+		margin:0px;
+		boeder:1px solid red;
+		text-align:center;
+		list-style:none;
+	}
+	.li01{
+		width:120px;
+		background:green;
+
+	}
+	.li02{
+		width:120px;
+		background:blue;
+		margin-left:120px;
+		float:left;
+		display:none;
+	}
+	.li03{
+		width:120px;
+		background:red;
+		margin-left:120px;
+		float:left;
+		display:none;
+	}
+	.li01>li:hover .li02{
+		display:block;
+	}
+	.li02>li:hover .li03{
+		display:block;
+	}
+  </style>
+ </head>
+
+ <body>
+	<ul class="li01">
+		<li>一级菜单
+			<ul class="li02">
+				<li>二级菜单
+					<ul class="li03">
+						<li>三级菜单</li>
+						<li>三级菜单</li>
+						<li>三级菜单</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li>一级菜单
+			<ul class="li02">
+				<li>二级菜单
+					<ul class="li03">
+						<li>三级菜单</li>
+						<li>三级菜单</li>
+						<li>三级菜单</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li>一级菜单
+			<ul class="li02">
+				<li>二级菜单
+					<ul class="li03">
+						<li>三级菜单</li>
+						<li>三级菜单</li>
+						<li>三级菜单</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+	</ul>
+ </body>
+</html>

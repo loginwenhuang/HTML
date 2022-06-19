@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="get">
+        <table border="1" align="center">
+            <tr>
+                <td>
+                    姓名
+                </td>
+                <td>
+                    <input type="text" name="xm" value="123" disabled/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    密码
+                </td>
+                <td>
+                    <input type="password" name="mm" value="456" />
+                </td>
+            </tr>
+            <tr>
+                <td>性别</td>
+                <td>
+                    <!--radio:单选-->
+                    <input type="radio" name="sex" value="男" checked/>男
+                    <input type="radio" name="sex" value="女"/>女
+                </td>
+              </tr>
+              <tr>
+                <td>爱好</td>
+                <td>
+                    <!--checkbox:复选-->
+                    <input type="checkbox" name="hobby" value="打球"/>打球
+                    <input type="checkbox" name="hobby" value="听歌"/>打球
+                    <input type="checkbox" name="hobby" value="弹钢琴"/>打球
+                </td>
+              </tr>
+              <tr>
+                <td>省份</td>
+                <td>
+                    <!--select:下拉框-->
+                    <select name="pro">
+                        <option value="">请选择</option>
+                        <option value="hn">河南</option>
+                        <option value="hb">河北</option>
+                    </select>
+                </td>
+              </tr>
+              <tr>
+                <td>自我介绍</td>
+                <td>
+                    <!--textarea:文本域-->
+                    <textarea cols="10" rows="3">你好,</textarea>
+                </td>
+              </tr>
+              <tr>
+                <td>照片</td>
+                <td>
+                    <!--type:file 文件框-->
+                    <input type="file" name="zp"/>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                    <!--四个按钮-->
+                    <input type="button" value="普通按钮" onclick="alert(123)"/>
+                    <input type="submit" value="提交"/>
+                    <input type="image" src="28-1.gif"/>
+                    <input type="reset" value="重置"/>
+                </td>
+              </tr>
+        </table>
+    </form>
+</body>
+</html>

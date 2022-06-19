@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.根据公式: 标准体重 = 身高-105，该值上下浮动5公斤都是标准体重。否则偏胖或偏瘦。</title>
+    <script>
+        var h = Number(prompt("你的身高:",""));
+        var v = Number(prompt("你的体重:",""));
+        if(v<h-105-5){
+            document.write("太瘦了!")
+        }else if(v>h-105-5){
+            document.write("太胖了!");
+        }else{
+            document.write("你很健康!");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        my page
+    </title>
+    
+</head>
+<body>
+    <p>
+        <input type="button" value="添加" id="btnAdd" />
+        <input type="button" value="删除" id="btnRemove" />
+    </p>
+    <div id="mydiv">
+
+    </div>
+    <style>
+        p,div{
+            text-align: center;
+            margin: 30px auto;
+            
+        }
+        div{
+            width: 500px;
+            height: 400px;
+            border: 1px solid blue;
+            overflow: auto;
+        }
+    </style>
+    <script>
+        function addElement(){
+            var pobj = document.createElement("p");
+            pobj.innerHTML="哈哈哈哈哈哈哈哈哈~";
+            //var color = "rgb(parseInt(Math.random()*255),125,32)";
+            pobj.style.color="rgb("+parseInt(Math.random()*255)+","+parseInt(Math.random()*255)+","+parseInt(Math.random()*255)+")";
+            //pobj.style.color="rgb(255,125,32)";
+            //pobj.style.color=color;
+            mydiv.appendChild(pobj);
+        }
+        btnAdd.onclick=addElement;
+        btnRemove.onclick=function removeElement(){
+            //var pobj = mydiv.lastElementChild;
+            //mydiv.removeChild(pobj);
+            mydiv.lastElementChild.remove();
+        }
+
+    </script>
+</body>
+</html>

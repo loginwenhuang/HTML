@@ -1,0 +1,41 @@
+<!DOCTYPE HTML >
+<html>
+ <head>
+  <title>  </title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="">
+  <style type="text/css">
+
+  </style>
+  <script type="text/javascript">
+	 var name="张三";
+	 var num=200;
+	 var flo=1.23;
+	 var v;
+	 document.write(num+" " + (typeof num) + "<br />");
+	 document.write(name +" "+(typeof name) +"<br />");
+	 document.write(flo +" "+(typeof flo) +"<br />");
+	 v= true;
+	 document.write(v +" "+(typeof v) +"<br />");
+	 v = null;
+	 document.write(v +" "+(typeof v) +"<br />");
+	 v = new Date();
+	document.write(v+" "+(typeof v)+"<br/>");
+	num++;
+	document.write(num);
+	document.write("<br />");
+	var flag=true || false;
+	document.write(flag);
+	flag=true && false;
+	document.write("<br />");
+	document.write(flag);
+	flag=false && false;
+	document.write("<br />");
+	document.write(flag);
+  </script>
+ </head>
+
+ <body>
+	
+ </body>
+</html>

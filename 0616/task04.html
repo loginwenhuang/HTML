@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+    </title>
+    <script>
+        function addRess(){
+            var address = document.getElementsByName("address");
+            //alert(address[0].value);
+            var sec="";
+            //for(var i in address){
+            for(var i=0;i<address.length;i++){
+                sec +=address[i].value;
+            }
+            Input.innerHTML=sec;
+        }
+    </script>
+</head>
+<body>
+    <form action="">
+        <p>省：<input type="text" name="address" value=""/></p>
+        <p>县：<input type="text" name="address" value=""/></p>
+        <p>乡：<input type="text" name="address" value=""/></p>
+        <p>详细地址：<input type="text" name="address" value=""/></p>
+        <br />
+        <input type="button" value="输出地址" onclick="addRess()"></button>
+        <br />
+        <p id="Input">
+            这里是输出框!
+        </p>
+    </form>
+</body>
+</html>

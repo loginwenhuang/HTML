@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>？年的？月有？日</title>
+    <script>
+        var Y = Number(prompt("请输入年份：",""));
+        var M = Number(prompt("请输入月份：",""));
+        switch(M){
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                document.write(Y+"年"+M+"月的天数是：31");
+                break;
+            case 2:
+                if(Y%4==0&&Y%100!=0||Y%400==0){
+                    document.write(Y+"年"+M+"月的天数是：29");
+                }else{
+                    document.write(Y+"年"+M+"月的天数是：28");
+                }
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                document.write(Y+"年"+M+"月的天数是：30");
+                break;
+            default:
+                document.write(Y+"年"+M+"月的天数是：NULL");
+                break;
+            }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

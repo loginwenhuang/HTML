@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script>
+        var arr = new Array(50);
+        var count =0;
+        while(true){
+            var m =Math.floor(Math.random()*100);
+            var flag=true;
+            for(var i =0;i<count+1;i++){
+                if(arr[i]==m){
+                    flag=false;
+                    break;
+                }
+            }
+            if(flag){
+                arr[count++]=m;
+            }
+            if(count==arr.length){
+                break;
+            }
+        }
+        document.write("原随机数组:"+arr);
+        for(var i=0;i<arr.length-1;i++){
+            for(var k = 0;k<arr.length-1-i;k++){
+                if(arr[k]>arr[k+1]){
+                    var num = arr[k];
+                    arr[k] = arr[k+1];
+                    arr[k+1]= num;
+                }
+            }
+        }
+        
+        document.write("<br />排序后的数组:"+arr);
+    </script>
+    
+</head>
+<body>
+    
+</body>
+</html>

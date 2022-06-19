@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+
+    </title>
+    <script>
+        /*function sayHello(name){
+            alert("你好!"+name);
+        }
+        var g =sayHello("muxiaowen");//没有返回值的函数返回undefined
+        function sayHello(){
+            return "你好！muxiaowen";
+        }
+        var g = sayHello();
+        */
+       function acMu(n,m){
+            var num = 0;
+            var a =n;
+            while(n<=m){
+                num += n;
+                n++;
+            }
+            document.write(a+"到"+m+"的和是："+num);
+            return num;
+       }
+       var a = Number(prompt("请输入计算范围：（左端点）",""));
+       var b = Number(prompt("（右端点）",""));
+       //
+       var n =acMu(a,b);
+       alert(n);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

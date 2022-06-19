@@ -1,0 +1,32 @@
+<!DOCTYPE HTML >
+<html>
+ <head>
+  <title>  </title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="">
+  <style type="text/css">
+
+  </style>
+  <script type="text/javascript">
+	// 单行注释
+	/*
+		多行注释
+	*/
+	var name='张三';
+	var sex="男";
+	var age= 20;
+	var tall=1.75;
+	//消息框的方式，显示消息
+	alert(name+" "+sex+" "+age+" "+tall);
+	document.write("<br />");
+	//js内置对象document输出内容到页面上
+	document.write(name+" "+sex+" "+age+" "+tall);
+	//使用调试输出对象console将信息输出到浏览器的控制台
+	console.log(name,sex,age,tall);
+  </script>
+ </head>
+
+ <body>
+	
+ </body>
+</html>

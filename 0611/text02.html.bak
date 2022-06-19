@@ -1,0 +1,22 @@
+<!DOCTYPE HTML >
+<html>
+ <head>
+  <title>  </title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="">
+  <style type="text/css">
+
+  </style>
+  <script type="text/javascript">
+	var name="张三";
+	var sex="男";
+	document.write(name+" "+sex);
+  </script>
+  <script type="text/javascript" src="../0610/my.js">
+  </script>
+ </head>
+
+ <body>
+	<a href="javascript:alert('hello')">点一下</a>
+ </body>
+</html>

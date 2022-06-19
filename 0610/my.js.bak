@@ -1,0 +1,3 @@
+var sex1 = 30;
+var sex2 = 40;
+document.write(年龄：sex1+sex2);

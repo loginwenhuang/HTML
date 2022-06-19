@@ -1,0 +1,29 @@
+<!DOCTYPE HTML >
+<html>
+ <head>
+  <title> New Document </title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="my.css"/>
+
+  <!--内部样式表-->
+  <style type="text/css">
+	/*css注释
+		标签选择器:使用html标签名选择元素
+	*/
+	p{
+		color:rgb(255,0,0); /*设置元素的文本颜色*/
+		font-size:30px; /*字体大小*/
+		font-weight:bold; /*字体粗细*/
+		font-family:隶书; /*字体类型*/
+		font-style:italic; /*字体风格*/
+	}
+  </style>
+ </head>
+ <body>
+	<h1>静夜思<sub>&nbsp;&nbsp;李白</sub></h1>
+	<p>窗前明月光，</p>
+	<p>疑是地上霜。</p>
+	<p>举头望明月,</p>
+	<p>低头思故乡。</p>
+ </body>
+</html>

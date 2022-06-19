@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>根据工资计算个人所得税</title>
+    <script>
+        var num = Number(prompt("你的工资是:",""));
+        if(num<36000){
+            document.write("个人所得税："+(num*0.03));
+        }else if(num<144000){
+            document.write("个人所得税："+(36000*0.03+(num-36000)*0.1));
+        }else if(num<300000){
+            document.write("个人所得税："+(144000*0.1+(num-144000)*0.2));
+        }else if(num<420000){
+            document.write("个人所得税："+(300000*0.2+(num-300000)*0.25));
+        }else if(num<660000){
+            document.write("个人所得税："+(420000*0.25+(num-420000)*0.3));
+        }else if(num<960000){
+            document.write("个人所得税："+(660000*0.3+(num-660000)*0.35));
+        }else{
+            document.write("个人所得税："+(960000*0.35+(num-960000)*0.45));
+        }
+    </script>
+    
+</head>
+<body>
+    
+</body>
+</html>

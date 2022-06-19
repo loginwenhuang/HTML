@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>疫情期间，体温检测，如果发烧（大于38度），则检查是否感染，感染则隔离，没有感染则正
+        常上课</title>
+    <script>
+        var tem = prompt("你的体温:","");
+        if(tem>38){
+            var ill = prompt("是否感染?","no");
+            if(ill=="yes"){
+                document.write("请隔离!");
+            }else{
+                document.write("休息一下吧!");
+            }
+        }else{
+            document.write("正常上课!");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
