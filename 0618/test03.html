@@ -10,14 +10,55 @@
     
 </head>
 <body>
-    <div class="x1"></div>
+    <div class="x1">这是一个div1</div>
+    <div>这是一个div2</div>
+    <div>这是一个div3</div>
+    <p class="x1">p元素1</p>
+    <p>p元素2</p>
+    <p>p元素3</p>
+    <div>
+        <b class="x1">这是一个div下的b</b>    
+    </div>
+    <span>
+        <b>这是span下的b</b>
+    </span>
+    <hr />
+    <p>
+        你喜欢的水果
+        <input type="checkbox" name="hobby" value="苹果"/>香蕉
+        <input type="checkbox" name="hobby"/>苹果
+        <input type="checkbox" name="hobby"/>橘子
+        <input type="checkbox" name="hobby"/>榴莲
+        <input type="button" id="allChecked" value="全选"/>
+    </p>
     <script>
         //document.getElementsByTagName
-        var clsAry = document.getElementsByClassName("x1");
-        alert(clsAry[0]);
-        // clsAry.forEach(  => {
-        //     array
-        // });
+        // var divAry = document.getElementsByTagName("div");
+        // //alert(divAry.length);
+        // for(var i = 0; i<divAry.length;i++){
+        //     alert(divAry[i].innerHTML);
+        // }
+        // var clsAry = document.getElementsByClassName("x1");
+        // for(var i =0;i<clsAry.length;i++){
+        //     alert(clsAry[i].innerHTML);
+        // }
+        allChecked.onclick=function(){
+            var obj =document.getElementsByName("hobby");
+            for(var i=0;i<obj.length;i++){
+                obj[i].checked=true;
+            }
+        }
+        var obj = document.querySelector("span");
+        alert(obj.innerHTML);
+
+        //var allobj = document.querySelectorAll(".x1");
+        var allobj = document.querySelectorAll("input");
+        alert(allobj.length);
+
+        var arr = [1,2,3,4];
+        arr.forEach(function(e,i){
+            alert(i+":"+e);
+        })
     </script>
 </body>
 </html>

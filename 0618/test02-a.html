@@ -14,5 +14,25 @@
         <p id="">这是一个p</p>
         <span>这是一个span</span>
     </div>
+    <script>
+        con.className="con";
+        //alert(con.outerHTML);
+        //alert(con.innerHTML);
+
+        //alert(con.childNodes);
+        //alert(con.childNodes.length);
+
+        // for(var i=0;i<con.childNodes.length;i++){
+        //     alert(con.childNodes[i].nodeType+" "+con.childNodes[i].nodeName+" "+con.childNodes[i].nodeValue);
+        // }
+
+        // for(var i=0;i<con.children.length;i++){
+        //     alert(con.children[i].nodeType+" "+con.children[i].nodeName+" "+con.children[i].nodeValue);
+        // }
+
+        //alert(con.firstElementChild.innerText);
+        //alert(con.children[1].previousElementSibling.innerText);
+        alert(con.children[2].parentElement.firstElementChild.innerText);
+    </script>
 </body>
 </html>

@@ -5,10 +5,93 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        
+        发表说说
     </title>
+    <style>
+        fieldset{
+            border: 2px solid gray;
+            margin: 20px auto;
+            width: 600px;
+            height: 400px;
+            padding: 20px;
+        }
+        form,div{
+            text-align: center;
+        }
+        div{
+            margin: 20px;
+            height: 320px;
+            border: 1px dashed pink;
+            overflow: auto;
+            padding: 10px;
+        }
+        p{
+            border: 1px solid black;
+            text-align: left;
+            position: relative;
+        }
+        #div p span:first-child{
+            background-color: orange;
+        }
+        #div p span:nth-child(2){
+            background-color: red;
+        }
+        #div p span:nth-of-type(3){
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            border: 1px solid yellow;
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: red;
+            text-align: center;
+            line-height: 20px;
+            cursor:pointer;
+        }
+    </style>
 </head>
 <body>
-    
+    <fieldset>
+        <legend>发表说说</legend>
+        <form>
+            姓名：
+            <input type="text" name="xm"/>
+            内容：
+            <input type="text" name="nr" />
+            <input type="button" id="sendMes" value="发送"/>
+        </form>
+        <div id="div">
+
+        </div>
+    </fieldset>
+    <script>
+        sendMes.onclick=function(){
+            var inpobj = document.querySelectorAll("input");
+            var divobj = document.querySelector("#div");
+            var pobj = document.createElement("p");
+
+            var spanxm = document.createElement("span");
+            spanxm.innerText=inpobj[0].value+":";
+            var spannr = document.createElement("span");
+            spannr.innerText=inpobj[1].value;
+
+            var spanClose = document.createElement("span");
+            spanClose.innerText="X";
+            spanClose.className="close";
+
+            spanClose.onclick=function(){
+                if(confirm("确定删除吗?")){
+                    this.parentElement.remove();
+                }
+            }
+
+            pobj.appendChild(spanxm);
+            pobj.appendChild(spannr);
+            pobj.appendChild(spanClose);
+
+            divobj.appendChild(pobj);
+        }
+    </script>
 </body>
 </html>
