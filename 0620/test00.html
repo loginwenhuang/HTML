@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+
+    </title>
+    <style>
+        fieldset{
+            margin: 0px auto;
+            width: 800px;
+        }
+        table{
+            border: 1px solid black;
+            width: 750px;
+            margin: 0px auto;
+            border-collapse: collapse;
+        }
+        td{
+            border: 1px solid black;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>商品信息</legend>
+        <form action="">
+            商品名:
+            <input type="text" id="goodsName"/>
+            单价：
+            <input type="text" name="" id="goodsPrice">
+            数量：
+            <input type="text" name="" id="goodsQuantity">
+            <input type="button" id="addGoods" value="添加">
+        </form>
+    </fieldset>
+    <fieldset>
+        <legend>购物车</legend>
+        <table>
+            <thead>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="" id="">全选
+                    </td>
+                    <td>品名</td>
+                    <td>单价</td>
+                    <td>数量</td>
+                    <td>小计</td>
+                    <td>
+                        删除
+                    </td>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+        </table>
+    </fieldset>
+    <script>
+        addGoods.onclick=function(){
+            var tds="";
+            tds+="<td><input type='checkbox'></input></td>";
+            tds+="<td>"+goodsName.value+"</td>";
+            tds+="<td>"+goodsPrice.value+"</td>";
+            tds+="<td>"+
+                    "<input type='button' value='+'>"+
+                    "<input type='text' value="+goodsQuantity.value+">"+
+                    "<input type='button' value='-'>"
+                 "</td>";
+            tds+="<td>"+Number(goodsPrice.value)*Number(goodsQuantity.value)+"</td>";
+            tds+="<td><input type='button' value='删除'></td>";
+
+            var trobj = document.createElement("tr");
+            trobj.innerHTML=tds;
+            //alert(trobj.innerHTML);
+            
+            // var tbody=document.querySelector("#tBody")
+            tbody.appendChild(trobj);
+        }
+    </script>
+</body>
+</html>

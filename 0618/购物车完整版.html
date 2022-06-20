@@ -9,7 +9,7 @@
     </title>
     <style>
         fieldset{
-            width: 800px;
+            width: 1200px;
             margin: 20px auto;
         }
         form{
@@ -18,7 +18,7 @@
         table,th,td{
             border: 1px solid black;
             border-collapse: collapse;
-            width: 750px;
+            width: 1100px;
             margin:20px auto;
             text-align: center;
         }
@@ -47,6 +47,8 @@
                 <tr>
                     <th>
                         <input type="checkbox" id="all" onclick="allCheck(this)"/>全选
+                        <input type="button" value="批量删除" onclick="massDelete(this)" />
+                        <input type="button" value="反选" onclick="inverseCheck(this)"/>
                     </th>
                     <th>品名</th>
                     <th>单价</th>
@@ -66,7 +68,28 @@
             </tfoot>
         </table>
     </fieldset>
-
+    <script type="text/html" id="tdTemp">
+        <td>
+            <input type="checkbox" class="ckgoods" onclick="goodschecked(this)"/>
+        </td>
+        <td class="goodsname">
+            {goodsname}
+        </td>
+        <td>
+            {goodsprice}
+        </td>
+        <td>
+            <input type="button" value="+" onclick="changeQty(this)"/>
+            <input type="text" value="{goodsquantity}" onblur="changeQty(this)"/>
+            <input type="button" value="-" onclick="changeQty(this)"/>
+        </td>
+        <td class="subtot">
+                {goodsprice}*{goodsquantity}
+        </td>
+        <td>
+            <input type="button" value="删除" onclick="confirm('确定要删除吗？')?goodsDelete(this):void(0)"/>
+        </td>
+    </script>
     <script>
         //添加按钮的触发事件
         btnAdd.onclick=function addGoods(){
@@ -84,10 +107,22 @@
         //增加或减少 商品数量
         function changeQty(change){
             var quantity = Number(change.parentElement.children[1].value);
-            if(change.value=="-"&&quantity>0){
+            if(change.value=="-"&&quantity>1){
                 change.previousElementSibling.value=quantity-1;
-            }else if(change.value=="+"){
+            }
+            else if(change.value=="-"&&quantity==1){
+                goodsDelete(change.parentElement.parentElement.lastElementChild.firstElementChild);
+            }
+            else if(change.value=="+"){
                 change.nextElementSibling.value=quantity+1;
+            }
+            else if(change.type=="text"&&isNaN(quantity)){
+                    alert("不是数字请重新输入");
+                    //通过小计和单价 将数量还原
+                    change.parentElement.children[1].value=change.parentElement.nextElementSibling.innerText/change.parentElement.previousElementSibling.innerText;
+            }
+            else if(change.type=="text"&&change.value==0){
+                goodsDelete(change.parentElement.parentElement.lastElementChild.firstElementChild);
             }
             subTotal(change);
             goodschecked();
@@ -125,7 +160,6 @@
             var flag = false;
             for(var i=0;i<goodsname.length;i++){
                 if(goodsname[i].innerText==goodsName.value){
-
                     flag = true;
                     break;
                 }
@@ -138,23 +172,31 @@
                 goodsquantity.value=Number(goodsquantity.value)+Number(goodsQuantity.value);
                 subTotal(goodsquantity);
                 goodschecked();
-            }else{
+            }else if(goodsQuantity.value!=0){
                 var trobj = document.createElement("tr");
-                var tds ="";
-                tds +="<td><input type='checkbox' class='ckgoods' onclick='goodschecked(this)'/></td>";
-                tds +="<td class='goodsname'>"+goodsName.value+"</td>";
-                tds +="<td>"+goodsPrice.value+"</td>";
-                tds +="<td>"+
-                        "<input type='button' value='+' onclick='changeQty(this)'/>"+
-                        "<input type='text' value='" +goodsQuantity.value+ "' onblur='changeQty(this)'/>"+
-                        "<input type='button' value='-' onclick='changeQty(this)'/>"+
-                    "</td>";
-                tds +="<td class='subtot'>"+(Number(goodsPrice.value)*Number(goodsQuantity.value))+"</td>";
-                tds+="<td><input type='button' value='删除' onclick='goodsDelete(this)'/></td>";
+                //var tds ="";
+                // tds +="<td><input type='checkbox' class='ckgoods' onclick='goodschecked(this)'/></td>";
+                // tds +="<td class='goodsname'>"+goodsName.value+"</td>";
+                // tds +="<td>"+goodsPrice.value+"</td>";
+                // tds +="<td>"+
+                //         "<input type='button' value='+' onclick='changeQty(this)'/>"+
+                //         "<input type='text' value='" +goodsQuantity.value+ "' onblur='changeQty(this)'/>"+
+                //         "<input type='button' value='-' onclick='changeQty(this)'/>"+
+                //     "</td>";
+                // tds +="<td class='subtot'>"+(Number(goodsPrice.value)*Number(goodsQuantity.value))+"</td>";
+                // tds+="<td><input type='button' value='删除' onclick='confirm(\"确定要删除吗？\")?goodsDelete(this):void(0)'/></td>";
 
+                var tds = tdTemp.innerHTML;
+                tds = tds.replace("{goodsquantity}",Number(goodsQuantity.value))
+                         .replace("{goodsname}",goodsName.value)
+                         .replace("{goodsprice}",Number(goodsPrice.value))
+                         .replace("{goodsprice}*{goodsquantity}",Number(goodsPrice.value)*Number(goodsQuantity.value))
+                //alert(tds);
                 trobj.innerHTML=tds;
                 tbody.appendChild(trobj);
                 allCheck(all);
+            }else{
+                alert("数量不能为0");
             } 
         }
         //全选框
@@ -171,9 +213,17 @@
                 for(var i=0;i<ckgoods.length;i++){
                     ckgoods[i].checked=false;
                     goodschecked();
+                }
             }
         }
-    }
+        //批量删除
+        function massDelete(massdelete){
+
+        }
+        //反选
+        function inverseCheck(inversecheck){
+
+        }
     </script>
 </body>
 </html>
