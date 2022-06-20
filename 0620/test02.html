@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+    </title>
+</head>
+<body>
+    <script>
+        //js对象
+        var stu = {
+            name:"张三",
+            age: 20,
+            tall:1.7,
+            sex:"男",
+            introduce:function(){
+                alert(this.name+this.age);
+            }
+        }
+        // alert(typeof stu);
+        // alert(stu.name);
+        // stu.introduce();
+        //json对象
+        var people = {
+            "name":"whc",
+            "age" : 20 ,
+            "sex" : "女"
+        }
+        // alert(people.name);
+        // alert(people["age"]);
+        //alert(typeof people);
+        var car = '{"brand":"宝马","price":200}';
+        //alert(car);
+        var obj = JSON.parse(car);
+        //alert(typeof JSON.stringify(obj));
+
+    </script>
+</body>
+</html>
