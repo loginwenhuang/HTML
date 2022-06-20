@@ -8,6 +8,10 @@
         购物车
     </title>
     <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
         fieldset{
             width: 1200px;
             margin: 20px auto;
@@ -28,6 +32,7 @@
     </style>
 </head>
 <body>
+    <!--
     <fieldset>
         <legend>商品信息</legend>
         <form action="">
@@ -40,6 +45,25 @@
             <input type="button" id="btnAdd" value="添加"/>
         </form>
     </fieldset>
+    -->
+    <fieldset>
+        <legend>商品信息</legend>
+        <table>
+            <thead>
+                <tr>
+                    <td>编号</td>
+                    <td>品名</td>
+                    <td>单价</td>
+                    <td>数量</td>
+                    <td>操作</td>
+                </tr>
+            </thead>
+            <tbody id="tbodyGoodsList">
+
+            </tbody>
+        </table>
+    </fieldset>
+    
     <fieldset>
         <legend>购物车</legend>
         <table>
@@ -68,6 +92,7 @@
             </tfoot>
         </table>
     </fieldset>
+
     <script type="text/html" id="tdTemp">
         <td>
             <input type="checkbox" class="ckgoods" onclick="goodschecked(this)"/>
@@ -90,11 +115,21 @@
             <input type="button" value="删除" onclick="confirm('确定要删除吗？')?goodsDelete(this):void(0)"/>
         </td>
     </script>
+    <script type="text/html" id="addTemp">
+        <td>{goodsId}</td>
+        <td>{goodsName}</td>
+        <td>{goodsPrice}</td>
+        <td>1</td>
+        <td>
+            <input type="button" value="添加" onclick="addGoods(this)">
+        </td>
+    </script>
     <script>
         //添加按钮的触发事件
-        btnAdd.onclick=function addGoods(){
-            goodsRepeat();
-            
+        //btnAdd.onclick=
+        function addGoods(thisAdd){
+            //alert("目小温");
+            goodsRepeat(thisAdd); 
         }
         //删除按钮的触发事件
         function goodsDelete(thisinput){
@@ -108,13 +143,13 @@
         function changeQty(change){
             var quantity = Number(change.parentElement.children[1].value);
             if(change.value=="-"&&quantity>1){
-                change.previousElementSibling.value=quantity-1;
+                change.previousElementSibling.value--;
             }
             else if(change.value=="-"&&quantity==1){
                 goodsDelete(change.parentElement.parentElement.lastElementChild.firstElementChild);
             }
             else if(change.value=="+"){
-                change.nextElementSibling.value=quantity+1;
+                change.nextElementSibling.value++;
             }
             else if(change.type=="text"&&isNaN(quantity)){
                     alert("不是数字请重新输入");
@@ -145,7 +180,7 @@
                     n++;
                 }
             }
-            if(n==goodscheck.length){
+            if(n==goodscheck.length&&n!=0){
                 all.checked=true;
             }else{
                 all.checked=false;
@@ -154,47 +189,90 @@
             total.innerText=tot+"元";
         }
         //判断有没有已经加入购物车的物品
-        function goodsRepeat(){
+        // function goodsRepeat(){
+        //     var goodsname = document.querySelectorAll(".goodsname");
+        //     //alert(goodsname[0]);
+        //     var flag = false;
+        //     for(var i=0;i<goodsname.length;i++){
+        //         if(goodsname[i].innerText==goodsName.value){
+        //             flag = true;
+        //             break;
+        //         }
+        //     }
+        //     //alert(flag); 
+        //     if(flag){
+        //         //alert(goodsname[i].parentElement.children[3]);
+        //         var goodsquantity=goodsname[i].parentElement.children[3].children[1];
+        //         //alert(goodsquantity.value);
+        //         goodsquantity.value=Number(goodsquantity.value)+Number(goodsQuantity.value);
+        //         subTotal(goodsquantity);
+        //         goodschecked();
+        //     }else if(goodsQuantity.value!=0){
+        //         var trobj = document.createElement("tr");
+        //         //var tds ="";
+        //         // tds +="<td><input type='checkbox' class='ckgoods' onclick='goodschecked(this)'/></td>";
+        //         // tds +="<td class='goodsname'>"+goodsName.value+"</td>";
+        //         // tds +="<td>"+goodsPrice.value+"</td>";
+        //         // tds +="<td>"+
+        //         //         "<input type='button' value='+' onclick='changeQty(this)'/>"+
+        //         //         "<input type='text' value='" +goodsQuantity.value+ "' onblur='changeQty(this)'/>"+
+        //         //         "<input type='button' value='-' onclick='changeQty(this)'/>"+
+        //         //     "</td>";
+        //         // tds +="<td class='subtot'>"+(Number(goodsPrice.value)*Number(goodsQuantity.value))+"</td>";
+        //         // tds+="<td><input type='button' value='删除' onclick='confirm(\"确定要删除吗？\")?goodsDelete(this):void(0)'/></td>";
+
+        //         var tds = tdTemp.innerHTML;
+        //         tds = tds.replace("{goodsquantity}",Number(goodsQuantity.value))
+        //                  .replace("{goodsname}",goodsName.value)
+        //                  .replace("{goodsprice}",Number(goodsPrice.value))
+        //                  .replace("{goodsprice}*{goodsquantity}",Number(goodsPrice.value)*Number(goodsQuantity.value))
+        //         //alert(tds);
+        //         trobj.innerHTML=tds;
+        //         tbody.appendChild(trobj);
+        //         if(all.checked==true){
+        //             allCheck(all);
+        //         }
+                
+        //     }else{
+        //         alert("数量不能为0");
+        //     } 
+        // }
+        function goodsRepeat(addbtn){
+            //alert(addbtn.value);
+            var addgoods= addbtn.parentElement.parentElement.children;
+
             var goodsname = document.querySelectorAll(".goodsname");
             //alert(goodsname[0]);
             var flag = false;
             for(var i=0;i<goodsname.length;i++){
-                if(goodsname[i].innerText==goodsName.value){
+                if(goodsname[i].innerText==addgoods[1].innerText){
                     flag = true;
                     break;
                 }
             }
+            //alert(addgoods[0].innerText);
             //alert(flag); 
             if(flag){
                 //alert(goodsname[i].parentElement.children[3]);
                 var goodsquantity=goodsname[i].parentElement.children[3].children[1];
                 //alert(goodsquantity.value);
-                goodsquantity.value=Number(goodsquantity.value)+Number(goodsQuantity.value);
+                goodsquantity.value=Number(goodsquantity.value)+Number(addgoods[3].innerText);
                 subTotal(goodsquantity);
                 goodschecked();
-            }else if(goodsQuantity.value!=0){
+            }else if(addgoods[3].value!=0){
                 var trobj = document.createElement("tr");
-                //var tds ="";
-                // tds +="<td><input type='checkbox' class='ckgoods' onclick='goodschecked(this)'/></td>";
-                // tds +="<td class='goodsname'>"+goodsName.value+"</td>";
-                // tds +="<td>"+goodsPrice.value+"</td>";
-                // tds +="<td>"+
-                //         "<input type='button' value='+' onclick='changeQty(this)'/>"+
-                //         "<input type='text' value='" +goodsQuantity.value+ "' onblur='changeQty(this)'/>"+
-                //         "<input type='button' value='-' onclick='changeQty(this)'/>"+
-                //     "</td>";
-                // tds +="<td class='subtot'>"+(Number(goodsPrice.value)*Number(goodsQuantity.value))+"</td>";
-                // tds+="<td><input type='button' value='删除' onclick='confirm(\"确定要删除吗？\")?goodsDelete(this):void(0)'/></td>";
-
                 var tds = tdTemp.innerHTML;
-                tds = tds.replace("{goodsquantity}",Number(goodsQuantity.value))
-                         .replace("{goodsname}",goodsName.value)
-                         .replace("{goodsprice}",Number(goodsPrice.value))
-                         .replace("{goodsprice}*{goodsquantity}",Number(goodsPrice.value)*Number(goodsQuantity.value))
+                tds = tds.replace("{goodsquantity}",addgoods[3].innerText)
+                         .replace("{goodsname}",addgoods[1].innerText)
+                         .replace("{goodsprice}",Number(addgoods[2].innerText))
+                         .replace("{goodsprice}*{goodsquantity}",Number(addgoods[2].innerText)*Number(addgoods[3].innerText))
                 //alert(tds);
                 trobj.innerHTML=tds;
                 tbody.appendChild(trobj);
-                allCheck(all);
+                if(all.checked==true){
+                    allCheck(all);
+                }
+                
             }else{
                 alert("数量不能为0");
             } 
@@ -218,12 +296,49 @@
         }
         //批量删除
         function massDelete(massdelete){
-
+            if(confirm("确定要删除吗？")){
+                var goodscheck = document.querySelectorAll(".ckgoods");
+                for(var i=goodscheck.length-1;i>=0;i--){
+                    if(goodscheck[i].checked==true){
+                        goodscheck[i].parentElement.parentElement.remove();
+                    }
+                }
+            }
+            goodschecked();
         }
         //反选
         function inverseCheck(inversecheck){
-
+            var goodscheck = document.querySelectorAll(".ckgoods");
+                for(var i=goodscheck.length-1;i>=0;i--){
+                    if(goodscheck[i].checked==true){
+                        goodscheck[i].checked=false;
+                    }else{
+                        goodscheck[i].checked=true;
+                    }
+                }
+            goodschecked();
         }
+
+        //JSON 购物车
+        var goodsList = [
+	        {"goodsId":1001,"goodsName":"苹果","goodsPrice":1.5},
+	        {"goodsId":1002,"goodsName":"香蕉","goodsPrice":2.5},
+	        {"goodsId":1003,"goodsName":"葡萄","goodsPrice":3.5},
+            {"goodsId":1004,"goodsName":"方便面","goodsPrice":4.5},
+            {"goodsId":1111,"goodsName":"奇诺栗鼠","goodsPrice":111111111111111},
+        ]
+        function renderGoodsList(){
+            for(var i=0;i<goodsList.length;i++){
+                var g = goodsList[i];
+                var tdstr = addTemp.innerHTML.replace("{goodsId}",g.goodsId)
+                                                .replace("{goodsName}",g.goodsName)
+                                                .replace("{goodsPrice}",g.goodsPrice);
+                var tr = document.createElement("tr");
+                tr.innerHTML=tdstr;
+                tbodyGoodsList.appendChild(tr);
+            }
+        }
+        window.onload=renderGoodsList;
     </script>
 </body>
 </html>
