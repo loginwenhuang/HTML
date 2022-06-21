@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+    </title>
+    <style>
+        .err{
+            color: red;
+            font-size: 15px;
+        }
+        span{
+            display: inline-block;
+            margin-left: 50px;
+            width: 40px;
+            height: 25px;
+            background-color: orange;
+            color: white;
+            text-align: center;
+            line-height: 25px;
+        }
+        span:hover{
+            background-color: red;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- <form action="" method="get" onsubmit="return checkAll()"> -->
+    <form action="" method="get" id="frm">
+        <h3>用户注册</h3>
+        <p>
+            用户名(4-10个字符):<br/>
+            <input type="text" name="username" id="username" onblur="checkName()"/>
+            <div class="err"></div>
+        </p>
+        <p>
+            密码(6-20个字符):<br/>
+            <input type="password" name="password" id="password" onblur="checkPassword()"/>
+            <div class="err"></div>
+        </p>
+        <p>
+            手机(11位数字):<br/>
+            <input type="text" name="phone" id="phone" onblur="checkPhone()"/>
+            <div class="err"></div>
+        </p>
+        <!-- <p>
+            <input type="submit" value="提交"/>
+            <input type="reset" value="重置"/>
+        </p> -->
+    </form>
+    <span onclick="checkAll()">提交</span>
+    <script>
+        var err = document.querySelectorAll(".err");
+        function checkName(){
+            if(username.value.length==0){
+                err[0].innerText="用户名不能为空";
+                return false;
+            }else if(username.value.length<4||username.value.length>10){
+                err[0].innerText="用户名长度不对";
+                return false;
+            }
+            err[0].innerText="";
+            return true;
+        }
+        function checkPassword(){
+            if(password.value.length==0){
+                err[1].innerText="密码不能为空";
+                return false;
+            }else if(password.value.length<6||password.value.length>20){
+                err[1].innerText="密码长度不对";
+                return false;
+            }
+            err[1].innerText="";
+            return true;
+        }
+        function checkPhone(){
+            if(phone.value.length==0){
+                err[2].innerText="手机号不能为空";
+                return false;
+            }else if(phone.value.length!=11){
+                err[2].innerText="手机号长度不是11位";
+                return false;
+            }else if(isNaN(Number(phone.value))){
+                err[2].innerText="手机号不是纯数字";
+                return false;
+            }
+            err[2].innerText="";
+            return true;
+        }
+        function checkAll(){
+            checkName();
+            checkPassword();
+            checkPhone();
+            if(checkName()&&checkPassword()&&checkPhone()){
+                frm.submit();
+            };
+        }
+    </script>
+</body>
+</html>

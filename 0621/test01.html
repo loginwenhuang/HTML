@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+    </title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        fieldset{
+            width: 1200px;
+            margin: 20px auto;
+            
+        }
+        table{
+            width: 1100px;
+            margin: 20px auto;
+        }
+        table,tr,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        input{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>商品列表</legend>
+        <table>
+            <thead>
+                <tr>
+                    <td>编号</td>
+                    <td>品名</td>
+                    <td>单价</td>
+                    <td>数量</td>
+                    <td>操作</td>
+                </tr>
+            </thead>
+            <tbody id="addGoods">
+
+            </tbody>
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend>购物车</legend>
+        <table>
+            <thead>
+                <tr>
+                    <td>
+                        <input type="checkbox" />全选
+                    </td>
+                    <td>
+                        编号
+                    </td>
+                    <td>
+                        书名
+                    </td>
+                    <td>
+                        单价
+                    </td>
+                    <td>
+                        数量
+                    </td>
+                    <td>
+                        小计
+                    </td>
+                    <td>
+                        操作
+                    </td>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+    </fieldset>
+    <script type="text/html" id="addGoodslist">
+        <td>{goodsid}</td>
+        <td>{goodsname}</td>
+        <td>{goodsprice}</td>
+        <td>{goodsquantity}</td>
+        <td>
+            <input type="button" value="添加" onclick="addgoods(this)"/>
+        </td>
+    </script>
+    <script type="text/html" id="tdTemp">
+        <td>
+            <input type="checkbox" name="" id="">
+        </td>
+        <td>{goodsid}</td>
+        <td>{goodsname}</td>
+        <td>{goodsprice}</td>
+        <td>
+            <input type="button" value="+">
+            <input type="text" name="" id="" value="{goodsquantity}">
+            <input type="button" name="" id="" value="-">
+        </td>
+        <td>
+            {goodsprice}*{goodsquantity}
+        </td>
+        <td>
+            <input type="button" value="删除"/>
+        </td>
+    </script>
+
+    <script>
+        var goodslist=[
+            {"id":1001,"name":"西游记","price":35,"author":"吴承恩"},
+            {"id":1002,"name":"图书1","price":45,"author":"xxx"},
+        ]
+        function addgoodslist(){
+            for(var i=0;i<goodslist.length;i++){
+            var g = goodslist[i];
+            var addtr = addGoodslist.innerHTML.replace("{goodsid}",g.id)
+                                            .replace("{goodsname}",g.name)
+                                            .replace("{goodsprice}",g.price)
+                                            .replace("{goodsquantity}",g.quantity);
+            //alert(addtr);
+            var trobj = document.createElement("tr");
+            trobj.innerHTML=addtr;
+            //alert(addGoods);
+            addGoods.appendChild(trobj);
+            }
+        }
+        addgoodslist();
+        function addgoods(thisgoods){
+                var trobj = document.createElement("tr");
+                var goods = thisgoods.parentElement.parentElement.children;
+                alert(goods[0].innerHTML);
+                var tds = tdTemp.innerHTML;
+                
+                tds = tds.replace("{goodsid}",goods[0].innerText)
+                         .replace("{goodsname}",goods[1].innerText)
+                         .replace("{goodsprice}",Number(goods[2].innerText))
+                         .replace("{goodsquantity}",Number(goods[3].innerText))
+                         .replace("{goodsprice}*{goodsquantity}",Number(goods[2].innerText)*Number(goods[3].innerText))
+                //alert(tds);
+                trobj.innerHTML=tds;
+                tbody.appendChild(trobj);
+        }        
+    </script>
+</body>
+</html>

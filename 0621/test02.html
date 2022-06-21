@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        校验邮箱
+    </title>
+</head>
+<body>
+    邮箱：
+    <input type="text" name="Email" id="Email" />
+    <input type="button" value="校验" onclick="checkemail()">
+    <script>
+        function checkemail(){
+            var email = Email.value;
+            if(email.charAt("@")==0||email.indexOf("@")==-1||email.lastIndexOf(".")==-1
+            ||email.indexOf("@")!=email.lastIndexOf("@")||email.indexOf("@")+1>=email.lastIndexOf(".")){
+                alert("邮箱格式错误");
+            }else{
+                alert("邮箱格式正确");
+            }
+        }
+    </script>
+</body>
+</html>

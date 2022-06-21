@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        图书购物车
+    </title>
+    <style>
+        fieldset{
+            width: 800px;
+            margin: 0px auto;
+        }
+        table{
+            margin: 20px auto;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        tr,td{
+            border: 1px solid black;
+            text-align: center;
+        }
+        input{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>图书信息</legend>
+        <table>
+            <thead>
+                <tr>
+                    <td>图书编号</td>
+                    <td>书名</td>
+                    <td>作者</td>
+                    <td>价格</td>
+                    <td>操作</td>
+                </tr>
+            </thead>
+            <tbody id="bookslist">
+
+            </tbody>
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend>购物车</legend>
+        <table>
+            <thead>
+                <tr>
+                    <td>
+                        全选:<input type="checkbox" />
+                    </td>
+                    <td>图书编号</td>
+                    <td>书名</td>
+                    <td>作者</td>
+                    <td>价格</td>
+                    <td>数量</td>
+                    <td>小计</td>
+                    <td>操作</td>
+                </tr>
+            </thead>
+            <tbody id="shoppingcart">
+
+            </tbody>
+        </table>
+    </fieldset>
+    <script type="text/html" id="booksTemp">
+        <td>{BH}</td>
+        <td>{SM}</td>
+        <td>{ZZ}</td>
+        <td>{JG}</td>
+        <td>
+            <input type="button" value="添加" onclick="addbooks(this)" />
+        </td>
+    </script>
+    <script type="text/html" id="addTemp">
+        <td>
+            <input type="checkbox" />
+        </td>
+        <td>{BH}</td>
+        <td>{SM}</td>
+        <td>{ZZ}</td>
+        <td>{JG}</td>
+        <td>
+            <input type="button" value="+" />
+            <input type="text" value="{SL}">
+            <input type="button" value="-">
+        </td>
+        <td>{XJ}</td>
+        <td>
+            <input type="button" name="" id="" value="删除">
+        </td>
+    </script>
+    <script>
+        function addbookslist(){
+            var books =[
+                {"id":1001,"name":"西游记","autor":"吴承恩","price":35},
+                {"id":1002,"name":"三国演义","autor":"罗贯中","price":45}
+            ]
+            for(var i=0;i<books.length;i++){
+                var b = books[i];
+                var tds= booksTemp.innerHTML.replace("{BH}",b.id)
+                                               .replace("{SM}",b.name)
+                                               .replace("{ZZ}",b.autor)
+                                               .replace("{JG}",b.price);
+                var trobj = document.createElement("tr");
+                trobj.innerHTML=tds;
+                bookslist.appendChild(trobj);                            
+            }
+            
+        }
+        addbookslist();
+        function addbooks(thisbook){
+            var thisbook = thisbook.parentElement.parentElement.children;
+            //alert(shoppingcart.children.length);
+            if(shoppingcart.children.length>0){
+                for(var i=0;i<shoppingcart.children.length;i++){
+                    //alert(thisbook[1].innerText);
+                    if(thisbook[1].innerText==shoppingcart.children[i].children[2].innerText){
+                        shoppingcart.children[i].children[5].children[1].value++;
+
+                        shoppingcart.children[i].children[6].innerText=(shoppingcart.children[i].children[5].children[1].value)*Number(shoppingcart.children[i].children[4].innerText);
+                        return ;
+                    }
+                }
+            }
+
+            var tds = addTemp.innerHTML.replace("{BH}",thisbook[0].innerText)
+                                       .replace("{SM}",thisbook[1].innerText)
+                                       .replace("{ZZ}",thisbook[2].innerText)
+                                       .replace("{JG}",thisbook[3].innerText)
+                                       .replace("{SL}",1)
+                                       .replace("{XJ}",Number(thisbook[3].innerText)*1);
+            var trobj =document.createElement("tr");
+            trobj.innerHTML=tds;
+            shoppingcart.appendChild(trobj);                           
+
+        }
+    </script>
+</body>
+</html>

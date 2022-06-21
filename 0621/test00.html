@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+    </title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        fieldset{
+            margin: 20px auto;
+        }
+        form{
+            text-align: center;
+        }
+        table,th,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            margin:20px auto;
+            text-align: center;
+        }
+        input{
+            text-align: center;
+        } 
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>商品信息</legend>
+        <table>
+            <thead>
+                <tr>
+                    <td>编号</td>
+                    <td>品名</td>
+                    <td>单价</td>
+                    <td>数量</td>
+                    <td>操作</td>
+                </tr>
+            </thead>
+            <tbody id="tbodyGoodsList">
+
+            </tbody>
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend>购物车</legend>
+        <table>
+            <thead>
+                <tr>
+                    <td>
+                       <input type="checkbox" name="" id="" /> 全选
+                    </td>
+                    <td>
+                        品名
+                    </td>
+                    <td>
+                        单价
+                    </td>
+                    <td>
+                        数量
+                    </td>
+                    <td>
+                        小计
+                    </td>
+                    <td>
+                        操作
+                    </td>
+                </tr>
+            </thead>
+            <tbody id="">
+    
+            </tbody>
+        </table>
+    </fieldset>
+    
+    <script type="text/html" id="tdTemp">
+        <td>
+            <input type="checkbox" />
+        </td>
+        <td>{goodsname}</td>
+        <td>{goodsprice}</td>
+        <td>
+            <input type="button" name="" id="" value="+" />
+            <input type="text" value="{goodsquantity}" />
+            <input type="button" value="-">
+        </td>
+        <td>
+            {goodsprice}*{goodsquantity}
+        </td>
+        <td>
+            <input type="button" value="删除"/>
+        </td>
+    </script>
+    <script type="text/html" id="addTemp">
+        <td>{id}</td>
+        <td>{name}</td>
+        <td>{price}</td>
+        <td>{quantity}</td>
+        <td>
+            <input type="button" value="添加">
+        </td>
+    </script>
+    <script>
+        var goodsList = [
+            {"Id":1001,"name":"苹果","price":3.5,"quantity":1}
+        ]
+        function renderGoodsList(){
+            for(var i=0;i<goodsList.length;i++){
+                var g = goodsList[i];
+                var tdstr = addTemp.innerHTML.replace("{id}",g.Id)
+                                                .replace("{name}",g.name)
+                                                .replace("{price}",g.price)
+                                                .replace("{quantity}",g.quantity);
+                var tr = document.createElement("tr");
+                tr.innerHTML=tdstr;
+                tbodyGoodsList.appendChild(tr);
+            }
+        }
+        renderGoodsList();
+    </script>
+</body>
+</html>
