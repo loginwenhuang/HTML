@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        50-1
+    </title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            /*弹性布局 设为 Flex 布局以后，子元素的 float、clear 等属性将失效*/
+            display: flex;
+            /*主轴的方向，即项目的排列方向 column:上向下*/
+            flex-direction: column;
+            /*flex子项在flex容器的当前行的侧轴（纵轴）方向上的对齐方式*/
+            align-items: center;
+            /*水平布局  center:水平方向居中*/
+            justify-content: center;
+            /*vh就是当前屏幕可见高度的1%，也就是说
+            height:100vh == height:100%;
+            但是当元素没有内容时候，设置height:100%，该元素不会被撑开，此时高度为0，
+            但是设置height:100vh，该元素会被撑开屏幕高度一致*/
+            height: 100vh;
+            overflow: hidden;
+            margin: 0;   
+        }
+    </style>
+</head>
+<body>
+    <h1>Project Starter</h1>
+    <h2>Project Starter</h2>
+    <h1>Project Starter</h1>
+    <h1>Project Starter</h1>
+</body>
+</html>
