@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        邮箱验证
+    </title>
+</head>
+<body>
+    邮箱:
+    <input type="text" name="email" id="email">
+    <input type="button" name="" id="" value="验证邮箱" onclick="checkEmail()">
+    <script>
+        function checkEmail(){
+            //alert(parseFloat(""));
+            var atPos = email.value.indexOf("@");
+		    var dotPos = email.value.indexOf(".");
+
+            //1. 含有@和.   
+            if(atPos==-1 || dotPos==-1){
+                alert("没有@或.，邮箱不合法");
+                return;
+            }
+
+            //2. @不能为第一位 
+            if(atPos==0){
+                alert("@是第一位，邮箱不合法");
+                return;
+            }
+            //3. .不能是最后一位 
+            if(dotPos==email.value.length-1){
+                alert(".是最后一位,邮箱不合法");
+                return;
+            }
+            //4. @和.不能挨着 , .在@后面
+            if(atPos>dotPos || atPos==dotPos-1){
+                alert("@不能在.之后，或者@不能挨着.");
+                return;
+            }
+            //5. @不能出现多次
+            var atPos2 = email.value.lastIndexOf("@");
+            if(atPos!=atPos2){
+                alert("@不能出现多次")
+                return;
+            }
+            alert("邮箱正确!!!");
+        }
+    </script>
+</body>
+</html>

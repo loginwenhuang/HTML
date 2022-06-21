@@ -151,8 +151,8 @@
             else if(change.value=="+"){
                 change.nextElementSibling.value++;
             }
-            else if(change.type=="text"&&isNaN(quantity)){
-                    alert("不是数字请重新输入");
+            else if(change.type=="text"&&isNaN(quantity)||change.value.length==0){
+                    alert("无效输入");
                     //通过小计和单价 将数量还原
                     change.parentElement.children[1].value=change.parentElement.nextElementSibling.innerText/change.parentElement.previousElementSibling.innerText;
             }
