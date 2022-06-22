@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        自定义邮箱格式正则验证
+    </title>
+</head>
+<body>
+    <p>
+        邮箱:
+        <input type="text" id="email" />
+        <input type="button" onclick="checkEmail()" value="验证">
+    </p>
+    <script>
+        function checkEmail(){
+            var r = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/
+            if(r.test(email.value)){
+                console.log("邮箱验证通过!");
+            }else{
+                console.log("邮箱格式错误!");
+            }
+        }
+        
+
+    </script>
+</body>
+</html>

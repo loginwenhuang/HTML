@@ -74,7 +74,10 @@
             var spanxm = document.createElement("span");
             spanxm.innerText=inpobj[0].value+":";
             var spannr = document.createElement("span");
-            spannr.innerText=inpobj[1].value;
+            
+            var reg = /目|小|温|奇|诺|栗|鼠/g
+
+            spannr.innerText=inpobj[1].value.replace(reg,"*");
 
             var spanClose = document.createElement("span");
             spanClose.innerText="X";
