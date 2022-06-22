@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+    </title>
+    <style>
+        .txt{
+            width: 70px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="num1" placeholder="数字1">
+    <input type="button" value="+" id="and">
+    <input type="text" id="num2" placeholder="数字2">
+    =
+    <span id="res">结果在此</span>
+    <script src="../jquery-各种版本/3.2.1/jquery-3.2.1.min.js"></script>
+    <script>
+        //alert($);
+        $(function(){
+            $("#num1,#num2").css("border","1px solid red");
+            $("#num1,#num2").css("height","30px");
+
+            $("#num1,#num2").addClass("txt");
+        })
+        
+        $("#and").click(function(){
+            var n=$("#num1").val();
+            console.log(n);
+            var m = $("#num2").val();
+            console.log(m);
+            var h = Number(n)+Number(m);
+            console.log(h);
+            $("#res").html(h);
+        })
+    </script>
+</body>
+</html>

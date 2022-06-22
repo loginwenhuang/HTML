@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+    </title>
+    <style>
+        #send{
+            width: 50px;
+            height: 21px;
+            background-color: aqua;
+            color: black;
+            line-height: 21px;
+            text-align: center;
+        }
+        .err{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="get" id="frm" >
+        <p>
+            用户名:<br />
+            <input type="text" id="username" name="username" onblur="checkName()">
+        </p>
+        <div class="err"></div>
+        <p>
+            邮箱:<br />
+            <input type="text" id="email" name="email" onblur="checkEmail()">
+        </p>
+        <div class="err"></div>
+    </form>
+    <div onclick="checkAll()" id="send">
+        发送
+    </div>
+    <script>
+        var err = document.querySelectorAll(".err");
+        function checkName(){
+            var name = username.value.length;
+            if(username.value.trim()==0){
+                err[0].innerText="用户名为空";
+                return false;
+            }
+            if(name<4||name>10){
+                err[0].innerText="长度不是4-10";
+                return false;
+            }
+            err[0].innerText=""
+            return true;
+        }
+        function checkEmail(){
+           
+            var em = email.value.length;
+            var at = email.value.indexOf("@");
+            var dot = email.value.indexOf(".");
+            
+            if(em==0){
+                err[1].innerText="邮箱为空";
+                return false;
+            }
+            if(em<6||em>50){
+                err[1].innerText="长度不是6-50";
+                return false;
+            }
+            if(at==-1){
+                err[1].innerText="没有@";
+                return false;
+            }
+            if(dot == -1){
+                err[1].innerText="没有.";
+                return false;
+            }
+            if(dot<at){
+                err[1].innerText="@在.后面";
+                return false;
+            }
+            err[1].innerText="";
+            return true;
+        }
+        function checkAll(){
+            // checkName();
+            // checkEmail();
+            if(checkName() & checkEmail()){
+                frm.submit();
+            }
+            
+        }
+    </script>
+</body>
+</html>

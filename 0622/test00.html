@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset ="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+    </title>
+</head>
+<body>
+    <form action="" method="get" id="frm">
+        <p>
+            用户名：<br />
+            <input type="text" id="username" name="username" onblur="checkName()"/>
+            <div class="err"></div>
+        </p>
+        <p>
+            密码：
+            <input type="text" id="password" name="password" onblur="checkpassword()"/>
+            <div class="err"></div>
+        </p>
+        <p>
+            手机号：
+            <input type="text" id="phone" name="phone" onblur="checkphone"/>
+            <div class="err"></div>
+        </p>
+    </form>
+    <div onclick="checkAll()">提交</div>
+    <script>
+        
+       
+        var err = document.querySelectorAll(".err");
+        function checkName(){
+            //alert(username.value.length);
+            if(username.value.length==0){
+                err[0].innerText="用户名长度为0";
+                return false;
+            }
+        }
+        function checkAll(){
+            checkName();
+            if(checkName()){
+                frm.submit();
+            }
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+    </title>
+</head>
+<body>
+    <p>
+        手机号:
+        <input type="text" id="phone" />
+        <input type="button" id="btn" value="校验">
+    </p>
+    <script>
+        btn.onclick=function (){
+            var r1 = /\d/;
+            if(r1.test(phone.value)){
+                console.log("有一个数字");
+            }else{
+                console.log("没有一个数字 1");
+            }
+            var r2 =/\d{11}/
+            if(r2.test(phone.value)){
+                console.log("有11位数字")
+            }else{
+                console.log("没有2");
+            }
+            var r3 = /^\d{11}$/
+            if(r3.test(phone.value)){
+                console.log("只有11位数字")
+            }else{
+                console.log("不是3");
+            }
+            var r4 = /^13[357]\d{8}$/
+            if(r4.test(phone.value)){
+                console.log("手机号正确")
+            }else{
+                console.log("不对 4");
+            }
+            var r5 = /^\w+@\w+\.com$/
+            if(r5.test(phone.value)){
+                console.log("正确的邮箱")
+            }else{
+                console.log("邮箱不争取 5");
+            }
+        }
+    </script>
+</body>
+</html>
