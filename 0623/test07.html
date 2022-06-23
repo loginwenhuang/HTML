@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> my page </title>
+  <style type="text/css">
+    table,tr,th,td{
+        border-collapse: collapse;
+    }
+    th,td{
+        text-align: center;
+    }
+  </style>
+ </head>
+ <body>
+  <table id="bookTab" border="1" width="600" align="center">
+	<thead>
+		<tr>
+			<th>编号</th>
+			<th>书名</th>
+			<th>作者</th>
+			<th>价格</th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	<tbody id="tbodyBook">
+		
+	</tbody>
+  </table>
+  <script type="text/javascript" src="../jquery-各种版本/3.2.1/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript">
+	var bookAry = [
+		{"bookId":1001,"name":"西游记","author":"吴承恩","price":30},
+		{"bookId":1002,"name":"三国演义","author":"罗贯中","price":35}
+	];
+
+	$(function(){
+		$(bookAry).each(function(){
+
+			$("#tbodyBook").append(
+				$("<tr></tr>").append(
+					$("<td></td>").html(this.bookId),
+					$("<td></td>").html(this.name),
+					$("<td></td>").html(this.author),
+					$("<td></td>").html(this.price),
+					$("<td></td>").html("<input type='button' value='添加'/>")
+				)
+			)
+		})
+	})
+  </script>
+ </body>
+</html>

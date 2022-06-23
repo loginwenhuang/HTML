@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+    <script type="text/javascript" src="../jquery-各种版本/3.2.1/jquery-3.2.1.js"></script>
+    <style type="text/css">
+    	*{
+    		padding: 0;
+    		margin: 0;
+    	}
+        h1{
+            text-align: center;
+            color: red;
+        }
+    	ul{
+			width: 500px;
+    		height: 300px;
+            margin: 20px auto;
+            list-style: none;
+            overflow: hidden;
+            position: relative;
+    	}
+        li{
+           position: absolute;
+            top:0px;
+        }
+        #li1{
+            left: 0px;
+        }
+        #li2{
+            left: 500px;
+        }
+        #li3{
+            left: 1000px;
+        }
+        #li4{
+            left: 1500px;
+        }
+        #li5{
+            left: 2000px;
+        }
+    	img{
+            width: 500px;
+            height: 300px;
+            display: block;
+        }
+        
+    </style>
+</head>
+<body>
+	<h1>可爱的猫</h1>
+    <ul>
+    	<li id="li1"><img src="../img/cat1.jpg" alt=""></li>
+    	<li id="li2"><img src="../img/cat2.jpg" alt=""></li>
+    	<li id="li3"><img src="../img/cat3.jpg" alt=""></li>
+        <li id="li4"><img src="../img/cat4.jpg" alt=""></li>
+    	<li id="li5"><img src="../img/cat5.jpg" alt=""></li>
+    </ul>
+    <!-- <div>
+        <input type="button" name="" id="btn" value="切换">
+    </div> -->
+    <script type="text/javascript">
+        var a = -500;
+        var n=0;
+    	$(function(){
+            setInterval(function(){
+                if(n<4){
+                    n++;
+                    $("#li1").animate({"left":a*n},1000);
+                    $("#li2").animate({"left":(a*n+500)},1000);
+                    $("#li3").animate({"left":(a*n+1000)},1000);
+                    $("#li4").animate({"left":(a*n+1500)},1000);
+                    $("#li5").animate({"left":(a*n+2000)},1000);                    
+                }else{
+                    n=0;
+                    $("#li1").animate({"left":a*n},1000);
+                    $("#li2").animate({"left":(a*n+500)},1000);
+                    $("#li3").animate({"left":(a*n+1000)},1000);
+                    $("#li4").animate({"left":(a*n+1500)},1000);
+                    $("#li5").animate({"left":(a*n+2000)},1000);
+                }                      
+            },1000)
+        })
+			
+    </script>
+</body>
+</html>

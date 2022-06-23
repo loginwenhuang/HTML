@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+    </title>
+    <style>
+    </style>
+</head>
+<body>
+    <form action="" method="get" onsubmit="return checkAll()">
+        <p>
+            姓名:
+            <input type="text" name="xm" id="xm">
+        </p>
+        <div id="err1"></div>
+        <p>
+            邮箱:
+            <input type="text" name="email" id="email">
+        </p>
+        <div id="err2"></div>
+        <input type="submit">
+    </form>
+    <script src="../jquery-各种版本/3.2.1/jquery-3.2.1.js"></script>
+    <script>
+        //alert($);
+        var r1 =/^[\u4e00-\u9fa5]{2,5}$/
+        var r2 = /^[a-zA-Z0-9]+@\w+\.\w+$/
+        function checkName(){
+            //alert($("#xm").val());
+            if(r1.test($("#xm").val())){
+                return true;
+            }else{
+                $("#err1").text("姓名有误");
+                return false;
+            }
+        }
+        function checkEmail(){
+            //alert($("#email").val());
+            if(r2.test($("#email").val())){
+                return true;
+            }else{
+                $("#err2").text("邮箱有误");
+                return false;
+            }
+        }
+        function checkAll(){
+            if(checkEmail()&checkName()){
+                return true;
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>

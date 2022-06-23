@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+    </title>
+</head>
+<body>
+    <div id="con"></div>
+    <script src="../jquery-各种版本/3.2.1/jquery-3.2.1.min.js">  </script>
+    <script>  
+        var	proAry = ["河南","四川","湖北"];
+        var cityAry = new Array(3);
+        cityAry["河南"] = ["郑州","洛阳","焦作"];
+        cityAry["四川"] = ["成都","绵阳","德阳"];
+        cityAry["湖北"] = ["武汉","黄冈","襄阳"];
+        $(function(){
+
+            $("#con").append("省份:");
+            $("#con").append(
+                $("<select id='pro'></select>").append("<option value=' '>请选择</option>")
+            );	
+            $(proAry).each(function(){
+                    $("#pro").append("<option value='"+this+"'>"+this+"</option>")
+            })
+
+            $("#con").append("市:");
+            $("#con").append(
+                $("<select id='city'></select>").append("<option value=''>请选择</option>")
+            );	
+            $("#pro").change(function(){
+                $("#city option:gt(0)").remove();
+                var sheng = $(this).val();
+                $.each(cityAry[sheng],function(){
+                    $("#city").append("<option value=' "+this+" '>"+this+"</option>")
+                })
+            })
+      })
+    
+    </script>
+</body>
+</html>

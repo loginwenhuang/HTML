@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+    </title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <input type="button" value="创建div" id="addDiv" />
+    <hr />
+    <div>这是一个div1</div>
+    <div>这是一个div2</div>
+    <div>这是一个div3</div>
+    <div>这是一个div4</div>
+    <div>这是一个div5</div>
+    <script src="../jquery-各种版本/1.12.4/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            $("div").css("border","1px solid black").width(200).height(30);
+            //.size()在jq3中已被删除
+            //console.log($("div").size());
+            console.log($("div").length);
+            $("div").click(function(){
+                $("div").css("backgroundColor","white");
+                //console.log(this);
+                $(this).css("backgroundColor","red");
+            })
+            $("#addDiv").click(function(){
+                $("body").append(
+                    $("<div>这是一个div"+($("div").length+1)+"</div>")
+                    .css("border","1px solid black").width(200).height(30)
+                    .click(function(){
+                        $("div").css("backgroundColor","white");
+                        $(this).css("backgroundColor","red");
+                    })
+                    )
+            })
+            // $(document).on("click","div",function(){
+            //     $("div").css("backgroundColor","white");
+            //     $(this).css("backgroundColor","red");
+            // })
+        })
+
+    </script>
+</body>
+</html>

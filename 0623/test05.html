@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+    </title>
+</head>
+<body>
+    <div id="mydiv" style="border:1px solid black;width:100px;height:100px"></div>
+    <script src="../jquery-各种版本/3.2.1/jquery-3.2.1.js"></script>
+    <script>
+        $(document).mousemove(function(e){
+            $("#mydiv").text("X:"+e.clientX+" Y:"+e.clientY);
+            console.log("x:"+window.event.clientX+" Y:"+window.event.clientY)
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+    </title>
+</head>
+<body>
+    <input type="button"  value="测试" id="btn"/>
+    省份:
+    <select name="" id="pro">
+        <option value="">请选择</option>
+        <option value="河南">河南</option>
+        <option value="河北">河北</option>
+    </select>
+    水果:
+    <select name="" id="fruit">
+        <option value="">请选择</option>
+        <option value="苹果">苹果</option>
+        <option value="香蕉">香蕉</option>
+        <option value="梨">梨</option>
+    </select>
+    <hr />
+    <ul>
+        <li>这是li1</li>
+        <li>这是li2</li>
+        <li>这是li3</li>
+        <li>这是li4</li>
+        <li>这是li5</li>
+        <li>这是li6</li>
+    </ul>
+    <script src="../jquery-各种版本/3.2.1/jquery-3.2.1.min.js"></script>
+    <script>
+        $("#btn").click(function(){
+            var opt=$(":selected");
+            opt.each(function (i,el){
+                console.log(i+$(el).val());
+            })
+            $("ul li:lt(3)").css("color","red");
+
+            $("ul li").last().css("color","red");
+        })
+    </script>
+</body>
+</html>

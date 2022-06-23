@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+    </title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <input type="button" value="隐藏" id="btnHidden"/>
+    <input type="button" value="显示" id="btnShow" />
+    <input type="button" value="折叠" id="btnZd" />
+    <input type="button" value="展开" id="btnZk" />
+    <input type="button" value="折叠/展开" id="btnZZ" />
+
+    <input type="button" value="动画" id="btnAnimate" />
+    <hr />
+    <div id="mydiv">
+
+    </div>
+    <script src="../jquery-各种版本/3.2.1/jquery-3.2.1.min.js"></script>
+    <script>
+        $(function(){
+            $("#mydiv").css({
+                width: 200,
+                height: 200,
+                position: "absolute",
+                //border: "1px solid black",
+                backgroundColor: "red",
+            })
+            $("#btnHidden").click(function(){
+                $("#mydiv").hide("fast");
+            })
+            $("#btnShow").click(function(){
+                $("#mydiv").show(1500);
+            })
+            $("#btnZd").click(function(){
+                $("#mydiv").slideUp("slow");
+            })
+            $("#btnZk").click(function(){
+                $("#mydiv").slideDown(1000);
+            })
+            $("#btnZZ").click(function(){
+                $("#mydiv").slideToggle(400);
+            })
+
+            $("#btnAnimate").click(function(){
+                $("#mydiv")
+                .animate({width:0,height:0,left:50,top:100},1000)
+                .delay(200)
+                .animate({width:200,height:200,left:200,top:200},1000)
+            })
+        })
+    </script>
+</body>
+</html>

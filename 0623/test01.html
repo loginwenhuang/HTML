@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+    </title>
+</head>
+<body>
+    <input type="button" id="js" value="js">
+    <input type="button" id="jq" value="jq">
+    <div id="mydiv"></div>
+    <input type="text" name="txt" id="txt">
+    <script src="../jquery-各种版本/3.2.1/jquery-3.2.1.min.js"></script>
+    <script>
+        document.getElementById("mydiv").innerHTML="我是一个div";
+        document.getElementById("txt").value="我是一个input"
+        //alert($);
+        //alert($("#mydiv").html());
+        //alert($("#txt").val());
+        //console.log($("#txt").val);
+        
+        js.onclick=function(){
+            var div1 = document.getElementById("mydiv");
+            console.log(div1.innerHTML);
+            console.log($(div1).html());
+        } 
+        $("#jq").click(function (){
+            var jqtxt = $("#txt");
+            console.log(jqtxt);
+            //console.log(jqtxt[0].value);
+            var jstxt = jqtxt.get(0);
+            console.log(jstxt);
+        })
+    </script>
+</body>
+</html>

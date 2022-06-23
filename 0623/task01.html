@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        可编辑表格
+    </title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        table{
+            margin: 0px auto;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        td,th{
+            border: 1px solid black;
+            width: 100px;
+            height: 30px;
+            text-align: center;
+        }
+        input{
+
+            display: none;
+            width: 100px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>学生成绩表</caption>
+        <thead>
+            <tr>
+                <td>语文成绩</td>
+                <td>数学成绩</td>
+                <td>英语成绩</td>
+                <td>物理成绩</td>
+                <td>生物成绩</td>
+            </tr>
+        </thead>
+        <tbody id="grades">
+        </tbody>
+    </table>
+    <div>
+        <button type="button"  id="addGrades">添加一行</button>
+    </div>
+    <script src="../jquery-各种版本/3.2.1/jquery-3.2.1.js"></script>
+    <script>
+        $(function(){
+            $("#addGrades").click(function(){
+                $("#grades").append(
+                    $("<tr></tr>").append(
+                        $("<td class='gradestd'></td>").append("<input type='text'/>"),
+                        $("<td class='gradestd'></td>").append("<input type='text'/>"),
+                        $("<td class='gradestd'</td>").append("<input type='text'/>"),
+                        $("<td class='gradestd'></td>").append("<input type='text'/>"),
+                        $("<td class='gradestd'></td>").append("<input type='text'/>")      
+                    )
+                )
+            })
+            $(document).on("dblclick",".gradestd",function(){
+                $(this).children().css({"display":"block"})
+                                  .blur(function(){
+                                    //alert("1");
+                                    var r = /^(1[0-2]0|1[0-1]\d|\d{2})$/;
+                                    var txt = $(this).val();
+                                    if(r.test(txt)){
+                                        $(this).parent().text(txt);
+                                        $(this).css({"display":"none"});
+                                    }else{
+                                        console.log("请重新输入");
+                                        $(this).val("");
+                                    }
+                                    
+                                  })
+            })
+
+        })
+    </script>
+</body>
+</html>
