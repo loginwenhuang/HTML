@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+    </title>
+    <style>
+        table{
+            border: 1px solid black;
+            border-collapse: collapse;
+            margin: 0px auto;
+        }
+        th,td{
+            border: 1px solid black;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>书名</th>
+                <th>作者</th>
+                <th>售价</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody id="books">
+            
+        </tbody>
+    </table>
+    <script src="../jquery-各种版本/3.2.1/jquery-3.2.1.js"></script>
+    <script>
+        $(function(){
+            var bookAry =[
+                {"id":1001,"name":"西游记","autor":"罗贯中","price":30},
+                {"id":1001,"name":"西游记","autor":"罗贯中","price":30}
+            ]
+            $.each(bookAry,function(){
+                $("#books").append(
+                    $("<tr></tr>").append(
+                        $("<td></td>").html(this.id),
+                        $("<td></td>").html(this.name),
+                        $("<td></td>").html(this.autor),
+                        $("<td></td>").html(this.price),
+                        $("<td></td>").html("<input type='button' value='添加' />")
+                        ))
+            })
+        })
+    </script>
+</body>
+</html>

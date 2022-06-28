@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+    </title>
+    <style>
+        table{
+            border: 1px solid black;
+            border-collapse: collapse;
+            margin: 10px auto;
+        }
+        th,td{
+            border: 1px solid black;
+            text-align: center;
+        }
+        input{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>图书清单</caption>
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>书名</th>
+                <th>作者</th>
+                <th>单价</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody id="booklist">
+
+        </tbody>
+    </table>
+    <table>
+        <caption>购物车</caption>
+        <thead>
+            <tr>
+                <td>
+                    <input type="checkbox" value="checkall" id=""/>全选
+                    <input type="button" value="批量删除"/>
+                    <input type="button" value="反选"/>
+                </td>
+                <td>编号</td>
+                <td>书名</td>
+                <td>作者</td>
+                <td>单价</td>
+                <td>数量</td>
+                <td>小计</td>
+                <td>操作</td>
+            </tr>
+        </thead>
+        <tbody id="bookscart">
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <td >选中价格：</td>
+                <td colspan="2" id="checktol"></td>
+                <td colspan="2">总计：</td>
+                <td colspan="3" id="total"></td>
+            </tr>
+        </tfoot>
+    </table>
+    <script src="./3.2.1/jquery-3.2.1.js"></script>
+    <script>
+        var booksAry = [
+            {"bookid":1001,"name":"西游记","autor":"吴承恩","price":25},
+            {"bookid":1002,"name":"西游记1","autor":"吴承恩1","price":30},
+            {"bookid":1003,"name":"西游记2","autor":"吴承恩2","price":35},
+            {"bookid":1004,"name":"西游记3","autor":"吴承恩3","price":40},
+            {"bookid":1005,"name":"西游记4","autor":"吴承恩4","price":45}
+        ]
+        $(function(){
+            $(booksAry).each(function(){
+                $("#booklist").append(
+                    $("<tr></tr>").append(
+                        $("<td></td>").html(this.bookid),
+                        $("<td></td>").html(this.name),
+                        $("<td></td>").html(this.autor),
+                        $("<td></td>").html(this.price),
+                        $("<td></td>").html("<input type='button' value='添加'>")
+                    ))
+            })
+            $(document).unbind("click").on("click","input",function(){
+                switch($(this).val()){
+                    case "添加":
+                        var book = $(this).parent().parent().children();
+
+                        var n = 1;
+                        var flag = true;
+                        $(".bookid").each(function(e,){
+                            if(book.eq(0).text()==$(this).text()){
+                                flag = false;
+                                $(".bookquan").eq(e).val(Number($(".bookquan").eq(e).val())+n);
+                            }
+                        })
+                        if(flag){
+                            $("#bookscart").append(
+                                $("<tr></tr>").append(
+                                    $("<td></td>").html("<input type='checkbox' value='check' class ='check'/>"),
+                                    $("<td class='bookid'></td>").html(book.eq(0).text()),
+                                    $("<td></td>").html(book.eq(1).text()),
+                                    $("<td></td>").html(book.eq(2).text()),
+                                    $("<td class='price'></td>").html(book.eq(3).text()),
+                                    $("<td></td>").append("<input type='button' value='+'/>")
+                                                  .append("<input type='text' value='"+n+"' class = 'bookquan'/>")
+                                                  .append("<input type='button' value='-'/>"),
+                                    $("<td class='subtol'></td>").html(Number(book.eq(3).text())*n),
+                                    $("<td></td>").append("<input type='button' value='删除'/>")
+                                    
+                                ))
+                        }
+                        subtol();
+                        break;
+                    case "删除":
+                        $(this).parent().parent().remove();
+                        subtol();
+                        break;
+                    case "+":
+                        var num =Number($(this).next().val());
+                        $(this).next().val(++num);
+                        subtol();
+                        break;
+                    case "-":
+                        var num = Number($(this).prev().val());
+                        if(num>1){
+                            $(this).prev().val(--num);
+                        }else{
+                            $(this).parent().parent().remove();
+                        }
+                        subtol();    
+                        break;
+                    case "checkall":
+                        if($(this).is(":checked")){
+                            $(".check").each(function(){
+                                $(this).prop("checked",true);
+                            })
+                        }else{
+                            $(".check").each(function(){
+                                $(this).prop("checked",false);
+                            })
+                        }
+                        subtol();
+                        break;
+                    case "check":
+                        subtol();
+                        break;
+                    case "批量删除":
+                        $(".check").each(function(){
+                            if($(this).is(":checked")){
+                                $(this).parent().parent().remove();
+                            }
+                        })
+                        break;
+                    case "反选":
+                        $(".check").each(function(){
+                                if($(this).is(":checked")){
+                                    $(this).prop("checked",false);
+                                }else{
+                                    $(this).prop("checked",true);
+                                }
+                            })
+                        subtol();
+                        break;
+                        
+                }
+            })
+            $(document).on("blur",".bookquan",function(){
+                subtol();
+            })
+            function subtol(){
+                var checksum=0;
+                var sum =0;
+                $(".bookquan").each(function(e,){
+                    
+                    var subt = Number($(".bookquan").eq(e).val())*Number($(".price").eq(e).text());
+                    $(".subtol").eq(e).text(subt);
+                    
+                    if($(".check").eq(e).is(":checked")){
+                        checksum+=Number($(".subtol").eq(e).text());
+                    }
+
+                    sum += Number($(".subtol").eq(e).text());
+                   
+                })
+                $("#checktol").text(checksum);
+                $("#total").text(sum);
+            }
+
+
+        })
+    </script>
+</body>
+</html>

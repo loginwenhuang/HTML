@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        省市级联
+    </title>
+</head>
+<body>
+    <div id="con"></div>
+    <script src="../jquery-各种版本/3.2.1/jquery-3.2.1.min.js"></script>
+    <script>
+        var pary = ["河南","河北","湖北"];
+        var cary = new Array(3);
+        cary["河南"] = ["郑州","焦作","南阳"];
+        cary["河北"] = ["石家庄","衡水","唐山"];
+        cary["湖北"] = ["武汉","鄂州"];
+        $(function(){
+            $("#con").append("省份");
+            $("#con").append(
+                $("<select id='p'></select>").html("<option value=''>请选择</option>")
+            )
+            $(pary).each(function(){
+                $("#p").append("<option value='"+this+"'>"+this+"</option>")
+            })
+            $("#con").append("城市");
+            $("#con").append(
+                $("<select id='c'></select>").html("<option value=''>请选择</option>")
+            )
+            $("#p").change(function(){
+                $("#c option:gt(0)").remove();
+                var c = $("#p").val();
+                $.each(cary[c],function(){
+                    $("#c").append("<option value='"+this+"'>"+this+"</option>")
+                })
+            })
+        })
+    </script>
+</body>
+</html>

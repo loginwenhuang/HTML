@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+    </title>
+    <link rel="stylesheet" href="./layui/css/layui.css">
+</head>
+<body>
+    <script src="./layui/layui.js"></script>
+    <script>
+        // layui.use(['layer','form'],function(){
+        //     var layer = layui.layer,
+        //         form = layui.form;
+            
+        //     layer.msg('Hello World!');
+                        
+        // });
+
+        layui.config({
+            base:''
+        }).use('index');
+
+        layui.define(['layer','form'],function(exports){
+            var layer = layui.layer,
+                form = layui.form;
+
+            layer.msg("Hello World");
+            exports('index',{});
+        })
+    </script>
+</body>
+</html>

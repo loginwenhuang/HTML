@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+    </title>
+</head>
+<body>
+    <div id="con"></div>
+    <script src="../jquery-各种版本/3.2.1/jquery-3.2.1.js"></script>
+    <script>
+        var pAry = ["河南","河北"];
+        var cAry = new Array(3);
+        cAry["河南"]=["郑州","焦作"];
+        cAry["河北"]=["衡水","石家庄"];
+        $(function(){
+            $("#con").append("省份:");
+            $("#con").append(
+                $("<select id='p'></select>").append("<option value=''>请选择</optipn>"));
+                
+            $(pAry).each(function(){
+               $("#p").append("<option value='"+this+"'>"+this+"</optipn>");
+            })
+            
+            $("#con").append("城市:");
+            $("#con").append(
+                $("<select id='c'></select>").append("<option value=''>请选择</optipn>"));
+            
+            $("#p").change(function(){
+                $("#c option:gt(0)").remove();
+                var c = $("#p").val();
+                $.each(cAry[c],function(){
+                    $("#c").append("<option value='"+this+"'>"+this+"</optipn>");
+                })
+            })        
+            
+        })
+        
+
+    </script>
+</body>
+</html>
